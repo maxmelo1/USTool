@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1027</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frame Grabber</string>
+  </property>
+  <property name="toolTip">
+   <string>Segmentar</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color: #1e272e;
+}
+
+	
+QPushButton {
+ 
+border: 2px solid gray;
+border-radius: 10px;
+padding: 0 8px;
+background: #30336b;
+color: white;
+font: bold 14px;
+}
+ 
+ QCheckBox{
+font: bold 14px;
+color: white;
+}
+
+QLabel#lblStream{
+border: 2px solid gray;
+border-radius: 10px;
+}
+
+#stream{
+background-color: #808e9b;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <item row="0" column="1" colspan="3">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QGraphicsView" name="stream"/>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="btnNew">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Novo arquivo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/new</normaloff>:/icons/new</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSalvar">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salvar dados&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/save4</normaloff>:/icons/save4</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSegmentar">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Realiza a segmentação da AOL a partir do dispositivo de captura selecionado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string extracomment="Segmentar"/>
+        </property>
+        <property name="icon">
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/seg_icon_off</normaloff>
+          <normalon>:/icons/seg_icon</normalon>:/icons/seg_icon_off</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>64</width>
+          <height>64</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSettings">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Configurações do sistema&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/settings3</normaloff>:/icons/settings3</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1027</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>&amp;Arquivo</string>
+    </property>
+    <widget class="QMenu" name="menuExportar">
+     <property name="title">
+      <string>Exportar</string>
+     </property>
+     <addaction name="actionExportarPlanilha"/>
+     <addaction name="actionExportarImagem"/>
+    </widget>
+    <widget class="QMenu" name="menuImportar">
+     <property name="title">
+      <string>Importar</string>
+     </property>
+     <addaction name="actionImportarPlanilha"/>
+     <addaction name="actionImportarImagem"/>
+    </widget>
+    <addaction name="actionNovo"/>
+    <addaction name="actionAbrir"/>
+    <addaction name="actionSalvar"/>
+    <addaction name="separator"/>
+    <addaction name="menuImportar"/>
+    <addaction name="menuExportar"/>
+    <addaction name="separator"/>
+    <addaction name="actionConfiguracoes"/>
+   </widget>
+   <widget class="QMenu" name="menu_Ajuda">
+    <property name="title">
+     <string>Aj&amp;uda</string>
+    </property>
+    <addaction name="action_Sobre"/>
+   </widget>
+   <widget class="QMenu" name="menuA_es">
+    <property name="title">
+     <string>Ações</string>
+    </property>
+    <addaction name="actionSegmentar_AOL"/>
+    <addaction name="actionSegmentar_EGS"/>
+    <addaction name="separator"/>
+    <addaction name="actionIniciarCaptura"/>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuA_es"/>
+   <addaction name="menu_Ajuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNovo">
+   <property name="text">
+    <string>&amp;Novo</string>
+   </property>
+  </action>
+  <action name="action_Sobre">
+   <property name="text">
+    <string>&amp;Sobre</string>
+   </property>
+  </action>
+  <action name="actionConfiguracoes">
+   <property name="text">
+    <string>Configurações</string>
+   </property>
+  </action>
+  <action name="actionSalvar">
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </action>
+  <action name="actionSegmentar_AOL">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Segmentar AOL</string>
+   </property>
+  </action>
+  <action name="actionSegmentar_EGS">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Segmentar EGS</string>
+   </property>
+  </action>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionExportarPlanilha">
+   <property name="text">
+    <string>Planilha</string>
+   </property>
+  </action>
+  <action name="actionImportarPlanilha">
+   <property name="text">
+    <string>Planilha</string>
+   </property>
+  </action>
+  <action name="actionIniciarCaptura">
+   <property name="text">
+    <string>Iniciar/parar captura</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionExportarImagem">
+   <property name="text">
+    <string>Imagem</string>
+   </property>
+  </action>
+  <action name="actionImportarImagem">
+   <property name="text">
+    <string>Imagem</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="res/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
