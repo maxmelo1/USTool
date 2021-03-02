@@ -1,0 +1,4 @@
+PyQt5
+lxml
+cv2
+#point2d
