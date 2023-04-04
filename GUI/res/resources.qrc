@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="icons">
+    <file alias="save4">icons/image4826.png</file>
+    <file alias="new">icons/992729-200.png</file>
+    <file alias="save3">icons/114698.png</file>
+    <file alias="save2">icons/image4795.png</file>
+    <file alias="save">icons/108174.png</file>
+    <file alias="settings3">icons/image4755.png</file>
+    <file alias="settings2">icons/83938.png</file>
+    <file alias="settings">icons/57047.png</file>
+    <file alias="seg_icon">icons/segmentar_oOJ_icon.ico</file>
+    <file alias="seg_icon_off">icons/410A_AOL-AOriginal.bmp</file>
+  </qresource>
+  <qresource prefix="sample">
+    <file alias="sample1">sample/109A_AOL-AOriginal.bmp</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<system>
+  <us>/dev/video0</us>
+  <model>
+    <name>unet</name>
+    <size>128</size>
+  </model>
+</system>
