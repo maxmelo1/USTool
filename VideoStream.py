@@ -33,6 +33,12 @@ class VideoStream:
         self.stopped = True
         self.queue = Queue(maxsize=size)
     
+    def changeDevice(self, device):
+        self.stream = cv2.VideoCapture(device, cv2.CAP_V4L)
+
+        self.stopped = True
+        self.queue = Queue(maxsize=self.size)
+    
     def start(self):
         if not self.stream.isOpened():
             self.stream.open(self.device)

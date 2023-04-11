@@ -148,6 +148,9 @@ class SettingsDialog(QDialog):
         self.model_size = int(self.selected_model.split('_')[1])
         
         self.setWindowTitle('Atualizando configurações, aguarde...')
+        
+        self.device = self.cb_us.currentText()
+        ###############################################################################
 
         t = threading.Thread(target=self.load_trained_model, args=())
         
@@ -174,15 +177,17 @@ class SettingsDialog(QDialog):
         #print(models)
 
     def listDevices(self):
-        devs = os.listdir('/dev')
-        vid_indices = ['/dev/video'+ str(dev[-1]) for dev in devs if dev.startswith('video')]
-        vid_indices = sorted(vid_indices)
+        
+        devs = ["/dev/"+el for el in list(filter( lambda x: x.startswith('video'), os.listdir('/dev')))]
+        print(devs)
+
+        devs = sorted(devs)
         
         self.cb_us.clear()
-        vid_indices.insert(0, '-')
-        self.cb_us.addItems(vid_indices)
+        devs.insert(0, '-')
+        self.cb_us.addItems(devs)
 
-        return vid_indices[0]
+        return devs
 
 
 class ActionStates(Enum):
@@ -331,7 +336,7 @@ class UI(QMainWindow):
                 self.workerThread.started.connect(self.worker.grab)
                 self.worker.imageChanged.connect(self.setImage)
                 self.workerThread.start()
-                print('starting grab process')
+                print('starting grab process. Device: ', self.vs.device)
                 self.workerThread.quit()
             else:
                 print('stopping')
@@ -560,6 +565,9 @@ class UI(QMainWindow):
         self.image_size = self.settings.model_size
         print(self.model_name)
         print(self.image_size)
+
+        print('settings', self.settings.device)
+        self.vs.changeDevice(int(self.settings.device[-1]))
 
         #print(self.lbl_stream.height())
         #print(self.lbl_stream.width())
