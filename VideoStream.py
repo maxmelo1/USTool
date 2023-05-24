@@ -80,6 +80,7 @@ class ProcessWorker(QObject):
     def __init__(self, mw):
         super(ProcessWorker, self).__init__()
         self.mw = mw
+        self.lastFrame = None
 
     def grab(self):
         
@@ -90,12 +91,16 @@ class ProcessWorker(QObject):
                 frame = self.mw.vs.read()
                 
                 image = frame.copy()
-                image = cv2.resize(image, (self.mw.image_size, self.mw.image_size))
+                self.lastFrame = frame.copy()
+                
+                new_size = self.mw.lbl_stream.size()
+                image = cv2.resize(image, (new_size.width(), new_size.height()))
 
                 im_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
                 
+                
                 #img = QImage( im_gray.data , self.mw.image_size, self.mw.image_size, im_gray.strides[0], QImage.Format_RGB888)#.rgbSwapped()
-                img = QImage( im_gray.data , self.mw.image_size, self.mw.image_size, im_gray.strides[0], QImage.Format_Grayscale8)#.rgbSwapped()
+                img = QImage( im_gray.data , new_size.width(), new_size.height(), im_gray.strides[0], QImage.Format_Grayscale8)#.rgbSwapped()
 
                 self.imageChanged.emit(img)
                 QThread.msleep(1)

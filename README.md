@@ -4,7 +4,7 @@
 
 This project is intended to interface ALoka old ultrasound device. Furthermore, this tool allows the user to automatically segment Rib-eye area using deep learning with Keras. 
 
-This repository  is now deprecated. THe new repository will be updated soon.
+This repository  is now deprecated. The new repository will be updated soon.
 
 ## Prerequisite
 
