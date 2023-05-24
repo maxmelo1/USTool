@@ -283,9 +283,11 @@ class UI(QMainWindow):
         options |= QFileDialog.DontUseNativeDialog
         fileName, _ = QFileDialog.getOpenFileName(self,"Carregar arquivo", "","Imagem PNG (*.png);;Imagem JPG (*.jpg);;Imagem BMP (*.bmp);;All Files (*)", options=options)
         if fileName:
+            new_size = self.lbl_stream.size()
+
             self.buffer = cv2.imread(fileName, cv2.IMREAD_COLOR)
-            im = cv2.resize(self.buffer, (self.image_size, self.image_size))
-            image = QImage( im.data , self.image_size, self.image_size, im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+            im = cv2.resize(self.buffer, (new_size.width(), new_size.height()))
+            image = QImage( im.data , new_size.width(), new_size.height(), im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
             self.setImage(image)
             self.new_file.animal[0].ribeye.image_path = fileName
             self.new_file.tbl_animais.model()._data[0].ribeye.image_path = fileName
