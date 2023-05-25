@@ -254,7 +254,7 @@ class UI(QMainWindow):
         
         self.lbl_stream.fitInView(self.scene.sceneRect(), Qt.KeepAspectRatio)
 
-        self.btn_apply.clicked.connect(self.doSegmentation)
+        self.btn_apply.clicked.connect(self.applySegmentation)
         self.btn_settings.clicked.connect(self.openSettings)
         self.btn_new.clicked.connect(self.newFile)
         self.btn_save.clicked.connect(self.saveFile)
@@ -575,14 +575,18 @@ class UI(QMainWindow):
         #print(self.lbl_stream.width())
 
 
-    def doSegmentation(self):
+    def applySegmentation(self):
         
         if self.model_name is not None:
             #image = cv2.imread("GUI/res/icons/410A_AOL-AOriginal.bmp", cv2.IMREAD_COLOR)
+
+            new_size = self.lbl_stream.size()
+
             print('size::::', self.buffer.shape)
             image = self.buffer
-            image = cv2.resize(image, (self.image_size, self.image_size))
             orig_im = image.copy()
+            image = cv2.resize(image, (self.image_size, self.image_size))
+            
             im_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             image = image / 255.
             image = np.expand_dims(image, axis=0)
@@ -603,9 +607,15 @@ class UI(QMainWindow):
             self.new_file.tbl_animais.model()._data[0].ribeye.size = float(areaPrediction[1]*px_size)
             self.new_file.tbl_animais.model().layoutChanged.emit()
 
+
             #im = np.require(result[0].squeeze()*255, np.uint8, 'C') 
             #rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB )
             im = self.overlay(image, result[0].squeeze()*255)
+
+            im = cv2.resize(im, (new_size.width(), new_size.height()))
+            result = cv2.resize(result.squeeze(axis=0).astype(np.uint8), (new_size.width(), new_size.height()))
+            result = np.expand_dims(result, axis=0)
+            result = np.expand_dims(result, axis=-1)
 
             gray_color_table = [qRgb(i, i, i) for i in range(256)]
 
@@ -619,14 +629,17 @@ class UI(QMainWindow):
             cv2.drawContours(copy, contours, -1, (255, 0, 0), 2)
 
             
-            #cv2.imshow('contours', copy)
-            #cv2.waitKey(0)
-            #cv2.destroyAllWindows()
-            #plt.imshow(result[0].squeeze()*255)
-            #plt.show()
+            # cv2.imshow('contours', copy)
+            # cv2.waitKey(0)
+            # cv2.destroyAllWindows()
+            # plt.imshow(result[0].squeeze()*255)
+            # plt.show()
             #dst_image = cv2.applyColorMap(result[0].squeeze()*255, cv2.COLORMAP_AUTUMN)
+
             
-            qImg = QImage( orig_im.data , self.image_size, self.image_size, copy.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+            orig_im = cv2.resize(orig_im, (new_size.width(), new_size.height()))
+            
+            qImg = QImage( orig_im.data , new_size.width(), new_size.height(), copy.strides[0], QImage.Format_RGB888)#.rgbSwapped()
             #qImg.setColorTable(gray_color_table)
             #qImg = qImg.scaledToWidth(self.lbl_stream.width()*0.9)
 
