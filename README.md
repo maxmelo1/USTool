@@ -2,7 +2,7 @@
 
 ## About this project
 
-This project is intended to interface ALoka old ultrasound device. Furthermore, this tool allows the user to automatically segment Rib-eye area using deep learning with Keras. 
+This project is intended to interface ALoka old ultrasound device. Furthermore, this tool allows the user to capture images and automatically segment Rib-eye area using deep learning with Tensorflow/Keras. 
 
 This repository  is now deprecated. The new repository will be updated soon.
 
@@ -25,3 +25,10 @@ python -m pip install -r requirements.txt
 ```bash
 python main_ui.py
 ```
+
+
+## Folder and subfolders structure
+
+The project main folder contains a XML file that defines the files location and project information. There are also some folders for storing the images collected during use of this tool. The folder structure is shown below.
+
+![Project folder structure](imgs/structure.png)
