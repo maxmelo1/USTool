@@ -1,0 +1,2524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>USTool.main_ui API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>USTool.main_ui</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton, QTextEdit, QMessageBox, QDialog, QComboBox, QLineEdit, QLabel, QDialogButtonBox, QWidget,QGraphicsView, QTableView, QAction, QFileDialog, QShortcut
+from PyQt5.QtGui import QImage, QPixmap, qRgb, QPen, QPolygonF, QStandardItemModel, QKeySequence
+from PyQt5.QtCore import QTimer, Qt, QRectF, QPointF, QThread, pyqtSlot
+from PyQt5 import uic, QtGui, QtCore, QtWidgets
+import sys
+import os
+import cv2
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
+import threading
+import logging
+import time
+from threading import Thread
+
+from lxml import etree, objectify
+
+from tensorflow.keras.layers import ReLU
+from keras.models import load_model
+
+from models.loss import *
+from overlay import overlay_mask
+from utils.utils2 import pixel_area
+
+import GUI.res.resources
+from graphicsview import GraphicsScene
+from animal import *
+from animal_table_model import AnimalTableModel
+from animal_table_view import AnimalTableView
+from about import AboutDialog
+from VideoStream import VideoStream, ProcessWorker
+
+from enum import Enum
+
+from functools import partial
+
+import pandas as pd
+
+
+import matplotlib
+matplotlib.use(&#39;TkAgg&#39;)
+
+APP_NAME = &#34;Captura de Ultrassom &#34;
+APP_VERSION = &#34;0.1.0&#34;
+
+
+
+
+class TimerMessageBox(QMessageBox):
+    def __init__(self, timeout=4, parent=None):
+        super(TimerMessageBox, self).__init__(parent)
+        self.setWindowTitle(&#34;Aguarde...&#34;)
+        self.time_to_wait = timeout
+        self.setText(&#39;Atualizando informações (Fechará automaticamente em alguns instantes)&#39;)
+        self.setStandardButtons(QMessageBox.NoButton)
+        self.timer = QTimer(self)
+        self.timer.setInterval(100)
+        self.timer.timeout.connect(self.changeContent)
+        self.timer.start()
+
+    def changeContent(self):
+        self.setText(&#39;Atualizando informações (Fechará automaticamente em alguns instantes)&#39;)
+        if(self.time_to_wait&gt;0):
+            self.time_to_wait -= 1
+        if self.time_to_wait &lt;= 0:
+            self.close()
+
+    def closeEvent(self, event):
+        self.timer.stop()
+        event.accept()
+
+
+class NewFile(QDialog):
+    &#39;&#39;&#39;
+    Maintains the TableModel with Cattle information. 
+    &#39;&#39;&#39;
+    #TODO Reformulate this class to mantain multiple cattle trait information per animal. 
+    def __init__(self):
+        super(NewFile, self).__init__()
+        uic.loadUi(&#34;GUI/NewFileDialog.ui&#34;, self)
+
+        #print(AnimalTableView())
+        self.tbl_animais = AnimalTableView(self.findChild(QTableView, &#34;tblDados&#34;))
+        
+
+        self.animal = [Cattle()]
+
+        #model = QStandardItemModel()
+        #model.setHorizontalHeaderLabels([&#39;Id&#39;, &#39;AOL&#39;, &#39;EGS&#39;, &#39;Picanha&#39;])
+        model = AnimalTableModel(self.animal)
+
+        #self.tbl_animais = AnimalTableView(model)
+        self.tbl_animais.setModel(model)
+        self.tbl_animais.setGeometry(QtCore.QRect(10, 20, 470, 320))
+        self.tbl_animais.setColumnWidth(1, 120)
+        #self.tbl_animais.resizeColumnsToContents()
+
+        header = self.tbl_animais.horizontalHeader()
+        header.setDefaultAlignment(Qt.AlignHCenter)
+
+        self.tbl_animais.doubleClicked.connect(self.tableDoubleClicked)
+    
+
+    def tableDoubleClicked(self):
+        row = self.tbl_animais.selectionModel().currentIndex().row()
+        idx = self.tbl_animais.selectionModel().currentIndex()
+        d = self.tbl_animais.model().data(idx, Qt.DisplayRole)
+        ob = self.tbl_animais.model().getAnimal(idx, Qt.DisplayRole)
+        # print(type(ob))
+        #id_us = self.tbl_animais.model().index(row, 0)
+        #o = id_us
+        #print(o)
+        #print (&#34;index : &#34; + id_us)
+
+        
+
+
+class SettingsDialog(QDialog):
+    &#39;&#39;&#39;
+    Miscellaneous project configurations
+    &#39;&#39;&#39;
+
+    def __init__(self):
+        super(SettingsDialog, self).__init__()
+        uic.loadUi(&#34;GUI/Settings.ui&#34;, self)
+
+        self.cb_us = self.findChild(QComboBox, &#34;cbUs&#34;)
+        self.txt_us = self.findChild(QLineEdit, &#34;txtUs&#34;)
+        self.cb_pipeline = self.findChild(QComboBox, &#34;cbPipeline&#34;)
+        self.button_box = self.findChild(QDialogButtonBox, &#34;buttonBox&#34;)
+
+        self.buttonBox.accepted.connect(self.accept2)
+
+        self.selected_model = None
+        self.model_size = None
+        self.model = 0
+
+        self.device = self.listDevices()
+        self.listPipelines()
+
+
+    def load_trained_model(self):
+        &#39;&#39;&#39;
+        Loads the previously selected segmentation model.
+        &#39;&#39;&#39;
+        model_path = &#39;GUI/models/&#39;+self.selected_model+&#39;/model.h5&#39;
+
+        model = load_model(model_path, custom_objects={
+            &#39;dice&#39;: dice,
+            &#39;relu6&#39;: ReLU})
+
+        #print(model)
+        
+        self.model = model
+
+    
+    def accept2(self):
+        self.selected_model = self.model_list[self.cb_pipeline.currentIndex()]
+        self.model_size = int(self.selected_model.split(&#39;_&#39;)[1])
+        
+        self.setWindowTitle(&#39;Atualizando configurações, aguarde...&#39;)
+        
+        self.device = self.cb_us.currentText()
+        ###############################################################################
+
+        t = threading.Thread(target=self.load_trained_model, args=())
+        
+        t.start()
+        t.join()
+
+        return super().accept()
+
+    def listPipelines(self):
+        &#39;&#39;&#39;
+        Feeds the available models to use in segmentation. Default model was trained with standard UNet model.
+        &#39;&#39;&#39;
+        self.models = {}
+        self.model_list = os.listdir(&#39;GUI/models&#39;)
+        model_names = list()
+
+        for m in self.model_list:
+            key, val = m.split(&#39;_&#39;)
+            if key not in self.models:
+                self.models[key] = list()
+            self.models[key].append(val)
+            model_names.append( f&#39;{key.capitalize()} - Resolução {val}x{val} px&#39; )
+
+        self.cb_pipeline.clear()
+        self.cb_pipeline.addItems(model_names)
+
+        #print(models)
+
+    def listDevices(self):
+        &#39;&#39;&#39;
+        Lists all video capture devices recognized by the OS.
+        &#39;&#39;&#39;
+        devs = [&#34;/dev/&#34;+el for el in list(filter( lambda x: x.startswith(&#39;video&#39;), os.listdir(&#39;/dev&#39;)))]
+        print(devs)
+
+        devs = sorted(devs)
+        
+        self.cb_us.clear()
+        devs.insert(0, &#39;-&#39;)
+        self.cb_us.addItems(devs)
+
+        return devs
+
+
+class ActionStates(Enum):
+    &#39;&#39;&#39;
+    This enumeration is used to control the application mode. 
+    In Ribeye mode, the segmentation model is enabled. In IMF, only the image capture is enabled.
+    &#39;&#39;&#39;
+    #TODO train a model to predict the line of IMF. 
+    #TODO create a menu for IMF image capture.
+    Segm_Ribeye = 0
+    Segm_IMF = 1
+
+class UI(QMainWindow):
+    PIXEL_SIZE = {&#39;128&#39;: 0.01326, &#39;256&#39;:0.00331, &#39;512&#39;:0.00083}
+
+    def __init__(self):
+        super(UI, self).__init__()
+        uic.loadUi(&#34;GUI/FrameGraber.ui&#34;, self)
+
+        self.project_file_name = &#34;Projeto em branco&#34;
+        
+        self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+        self.model_name = None
+        self.buffer = None
+        self.vs = None
+
+        self.settings = SettingsDialog()
+        self.settings.setWindowTitle(&#34;Configurações de Sistema&#34;)
+
+        self.new_file = NewFile()
+        self.new_file.setWindowTitle(&#34;Adicionar/editar um animal&#34;)
+
+        self.about = AboutDialog()
+ 
+        # find the widgets in the xml file
+        self.btn_apply = self.findChild(QPushButton, &#34;btnSegmentar&#34;)
+        self.btn_settings = self.findChild(QPushButton, &#34;btnSettings&#34;)
+        self.btn_new = self.findChild(QPushButton, &#34;btnNew&#34;)
+        self.btn_save = self.findChild(QPushButton, &#34;btnSalvar&#34;)
+        #self.lbl_stream = self.findChild(QLabel, &#34;lblStream&#34;)
+        self.lbl_stream = self.findChild(QGraphicsView, &#34;stream&#34;)
+
+        ag = QtWidgets.QActionGroup(self)
+
+        self.action_aol_menu = self.findChild(QAction, &#34;actionSegmentar_AOL&#34;)
+        self.action_imf_menu = self.findChild(QAction, &#34;actionSegmentar_EGS&#34;)
+        self.about_menu = self.findChild(QAction, &#34;action_Sobre&#34;)
+        self.open_menu = self.findChild(QAction, &#34;actionAbrir&#34;)
+        self.new_menu = self.findChild(QAction, &#34;actionNovo&#34;)
+        self.save_menu = self.findChild(QAction, &#34;actionSalvar&#34;)
+        self.import_menu = self.findChild(QAction, &#34;actionImportarPlanilha&#34;)
+        self.import_image_menu = self.findChild(QAction, &#34;actionImportarImagem&#34;)
+        self.export_menu = self.findChild(QAction, &#34;actionExportarPlanilha&#34;)
+        self.export_image_menu = self.findChild(QAction, &#34;actionExportarImagem&#34;)
+        self.start_grabbing_menu = self.findChild(QAction, &#34;actionIniciarCaptura&#34;)
+        self.settings_menu = self.findChild(QAction, &#34;actionConfiguracoes&#34;)
+
+        #self.start_grabbing_menu.setShortcut(QKeySequence(&#34;Ctrl+i&#34;))
+
+        ag.addAction(self.action_aol_menu)
+        ag.addAction(self.action_imf_menu)
+
+        self.actionState = ActionStates.Segm_Ribeye
+
+        #change to graphics obj
+        #self.lbl_stream = GraphicsView(self.lbl_stream)
+        self.scene = GraphicsScene(self)
+        self.lbl_stream.setScene(self.scene)
+        
+        self.lbl_stream.fitInView(self.scene.sceneRect(), Qt.KeepAspectRatio)
+
+        self.btn_apply.clicked.connect(self.applySegmentation)
+        self.btn_settings.clicked.connect(self.openSettings)
+        self.btn_new.clicked.connect(self.newFile)
+        self.btn_save.clicked.connect(self.saveFile)
+        
+        self.about_menu.triggered.connect(self.openAboutDialog)
+        self.open_menu.triggered.connect(self.openFile)
+        self.save_menu.triggered.connect(self.saveFile)
+        self.new_menu.triggered.connect(self.newFile)
+        self.export_menu.triggered.connect(self.exportFile)
+        self.export_image_menu.triggered.connect(self.exportImage)
+        self.import_menu.triggered.connect(self.importFile)
+        self.import_image_menu.triggered.connect(self.importImage)
+        self.start_grabbing_menu.triggered.connect(self.startGrabbing)
+        self.settings_menu.triggered.connect(self.openSettings)
+        self.action_aol_menu.triggered.connect(partial(self.setCurrentAction, ActionStates.Segm_Ribeye))
+        self.action_imf_menu.triggered.connect(partial(self.setCurrentAction, ActionStates.Segm_IMF))
+
+        self.setup()
+        self.settings.load_trained_model()
+ 
+        self.show()
+
+    def importImage(self):
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,&#34;Carregar arquivo&#34;, &#34;&#34;,&#34;Imagem PNG (*.png);;Imagem JPG (*.jpg);;Imagem BMP (*.bmp);;All Files (*)&#34;, options=options)
+        if fileName:
+            new_size = self.lbl_stream.size()
+
+            self.buffer = cv2.imread(fileName, cv2.IMREAD_COLOR)
+            im = cv2.resize(self.buffer, (new_size.width(), new_size.height()))
+            image = QImage( im.data , new_size.width(), new_size.height(), im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+            self.setImage(image)
+            self.new_file.animal[0].ribeye.image_path = fileName
+            self.new_file.tbl_animais.model()._data[0].ribeye.image_path = fileName
+            self.new_file.tbl_animais.model().layoutChanged.emit()
+
+    def exportImage(self):
+        if self.buffer is None:
+            QMessageBox.about(self, &#34;Erro&#34;, &#34;Nenhum arquivo de imagem carregado.&#34;)
+        else:
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            fileName, fi = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;Imagem PNG (*.png);;Imagem JPG (*.jpg);;Imagem BMP (*.bmp);;All Files (*)&#34;, options=options)
+            
+            if fileName:
+                ext = {&#34;Imagem PNG (*.png)&#34;:&#39;.png&#39;, &#39;Imagem JPG (*.jpg)&#39;: &#39;.jpg&#39;, &#39;Imagem BMP (*.bmp)&#39;: &#39;.bmp&#39;}
+                name = ([ext[el] for el in ext if el == fi])[0]
+                name = fileName+name if name not in fileName else fileName
+                cv2.imwrite(name, self.buffer)
+                QMessageBox.about(self, &#34;Sucesso&#34;, &#34;Imagem salva com sucesso.&#34;)
+
+    @pyqtSlot(QImage)
+    def setImage(self, image):
+        pixmap = QPixmap.fromImage(image)
+        self.scene.item.setPixmap(pixmap)
+        self.updateView()
+
+
+    def startGrabbing(self):
+        &#39;&#39;&#39;
+        Starts a QThread and assigns a Worker Thread to it. The thread grabs frames from the capture device and stores them into a buffer.
+        See ProcessWorker to the thread implementation.
+        &#39;&#39;&#39;
+        #if self.buffer is not None:
+        msg = QMessageBox()
+        msg.setWindowTitle(&#34;Sobreposição de arquivo&#34;)
+        msg.setText(&#34;Descartar o arquivo de imagem existente?\nNão será possível recuperá-lo posteriormente!&#34;)
+        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        retval = msg.exec_()
+
+        if retval == QMessageBox.Ok:
+            
+            if self.vs.stopped:
+                self.vs = self.vs.start()
+                # self.updateImageWidgetThread()
+                if not hasattr(self, &#39;workerThread&#39;):
+                    self.workerThread = QThread()
+                if hasattr(self, &#39;worker&#39;):
+                    del self.worker
+                self.worker = ProcessWorker(self)
+                self.worker.moveToThread(self.workerThread)
+                self.workerThread.finished.connect(self.worker.deleteLater)
+                self.workerThread.started.connect(self.worker.grab)
+                self.worker.imageChanged.connect(self.setImage)
+                self.workerThread.start()
+                print(&#39;starting grab process. Device: &#39;, self.vs.device)
+                self.workerThread.quit()
+            else:
+                print(&#39;stopping&#39;)
+                self.buffer = self.vs.read()
+                #self.vs.stop()
+                self.vs.stopped = True
+
+        else:
+            QMessageBox.about(self, &#34;Ajuda&#34;, &#34;Para salvar a imagem, vá em\nArquivo&gt;Exportar&gt;Imagem&#34;)
+
+
+    def dfToAnimal(self, df):
+        lan = list()
+        for i in df.index:
+            an = Cattle()
+            for j, idx in enumerate(list(df.columns)):
+                an.setValue(j, list(df[idx])[i])
+
+            lan.append(an)
+        
+        self.new_file.animal = lan
+        #self.new_file.model._data = lan
+        self.new_file.tbl_animais.model()._data = lan
+        self.new_file.tbl_animais.model().layoutChanged.emit()
+
+    def importFile(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,&#34;Abrir arquivo&#34;, &#34;&#34;,&#34;All Files (*);;Arquivos de planilha (*.xlsx)&#34;, options=options)
+        if fileName:
+            self.project_file_name = fileName
+            self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+            elems = pd.read_excel(fileName, &#39;Sheet1&#39;, engine=&#39;openpyxl&#39;)
+            
+            self.dfToAnimal(elems)
+            QMessageBox.about(self, &#34;Abrindo planilha&#34;, &#34;Arquivo importado com sucesso!&#34;)
+
+    def openFile(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,&#34;Abrir arquivo&#34;, &#34;&#34;,&#34;Arquivos de projeto (*.pro);;All Files (*)&#34;, options=options)
+        if fileName:
+            try:
+                an = Cattle()
+                tree = etree.parse(fileName)
+                root = tree.getroot()
+
+                #print( root[0].text )
+                print( root.findall(&#39;name&#39;)[0].text )
+                self.project_file_name = root.findall(&#39;name&#39;)[0].text
+                an.id = root.findall(&#39;cattle/id&#39;)[0].text
+                an.aol = root.findall(&#39;cattle/aol/size&#39;)[0].text
+                an.ribeye.size = root.findall(&#39;cattle/aol/size&#39;)[0].text
+                an.ribeye.image_path = root.findall(&#39;cattle/aol/path&#39;)[0].text
+                an.egs = 0
+                an.picanha = 0
+
+                lan = [an]
+                self.new_file.animal = lan
+                self.new_file.tbl_animais.model()._data = lan
+                self.new_file.tbl_animais.model().layoutChanged.emit()
+                self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+                if os.path.exists(self.new_file.tbl_animais.model()._data[0].ribeye.image_path):
+                    image = cv2.imread(self.new_file.tbl_animais.model()._data[0].ribeye.image_path, cv2.IMREAD_COLOR)
+                    self.buffer = image
+                    im = cv2.resize(self.buffer, (self.image_size, self.image_size))
+                    image = QImage( im.data , self.image_size, self.image_size, im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+                    self.setImage(image)
+
+                    xml_pts = root.findall(&#39;cattle/aol/points&#39;)
+                    
+                    l_points = list()
+                    for elem in xml_pts:
+                        pts = elem.findall(&#39;point&#39;)
+                        for pt in pts:
+                            vals = pt.text.split(&#39;,&#39;)
+                            p = [[int(float(vals[0])), int(float(vals[1])) ]]
+                            l_points.append(p)
+                    np_points = np.array(l_points)
+                    
+                    pts = self.toQPoint(np_points)
+                    self.scene.points = pts
+
+                    for pt in pts:
+                        self.scene.polygon_item.addPoint(pt)
+
+                    self.updateView()
+
+                QMessageBox.about(self, &#34;Carregar projeto&#34;, &#34;Projeto carregado com sucesso!&#34;)
+
+            except OSError:
+                QMessageBox.about(self, &#34;Carregar projeto&#34;, &#34;Erro em carregar o projeto.&#34;)
+
+    def toDict(self):
+        elems = dict((el,[]) for el in Cattle.getHeader())
+
+        for a in self.new_file.animal:
+            al = a.toList()
+            for i,k in enumerate(elems):
+                elems[k].append( al[i] )
+        return elems
+
+
+    def exportFile(self):
+        if len(self.new_file.animal)&gt;0:
+            elems = self.toDict()
+
+            df = pd.DataFrame(elems)
+
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            fileName, _ = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;All Files (*);;Text Files (*.txt)&#34;, options=options)
+
+            if fileName:
+                print(fileName.find(&#39;.xls&#39;) &gt; -1 or fileName.find(&#39;.xlsx&#39;) &gt; -1)
+                
+                name = fileName if fileName.find(&#39;.xls&#39;) &gt; -1 or fileName.find(&#39;.xlsx&#39;) &gt; -1 else fileName+&#34;.xlsx&#34;
+                print(name)
+                writer = pd.ExcelWriter(name, engine=&#39;xlsxwriter&#39;)
+                df.to_excel(writer, sheet_name=&#39;Sheet1&#39;, index=False)
+
+                writer.save()
+                QMessageBox.about(self, &#34;Salvando arquivos&#34;, &#34;Arquivo salvo com sucesso!&#34;)
+
+    def writeProjectXML(self, location):
+        &#39;&#39;&#39;
+        TODO adjust for multi cattle files
+        &#39;&#39;&#39;
+        root = etree.Element(&#34;app&#34;)
+        n = etree.SubElement(root, &#39;name&#39;)
+        n.text = self.project_file_name
+
+        animal = etree.SubElement(root, &#39;cattle&#39;)
+        
+        app_id = etree.SubElement(animal, &#39;id&#39;)
+        app_id.text = str(self.new_file.animal[0].id)
+        
+        aol = etree.SubElement(animal, &#39;aol&#39;)
+        
+        img = etree.SubElement(aol, &#39;path&#39;)
+        img.text = self.new_file.animal[0].ribeye.image_path
+        size = etree.SubElement(aol, &#39;size&#39;)
+        size.text = str(self.new_file.animal[0].ribeye.size)
+
+        #TODO save the points in project xml file.
+        if self.scene.polygon_item.m_points and len(self.scene.polygon_item.m_points)&gt;0:
+            pts = etree.SubElement(aol, &#39;points&#39;)
+            print(&#39;points:&#39;)
+            
+            for pt in self.scene.polygon_item.m_points:
+                p = etree.SubElement(pts, &#39;point&#39;)
+                p.text = f&#39;{pt.x()},{pt.y()}&#39;
+
+        tree = etree.ElementTree(root)
+        tree.write(location, pretty_print=True, xml_declaration=True,   encoding=&#34;utf-8&#34;)  
+
+    def saveFile(self):
+        # TODO save file in the device image resolution
+        if len(self.new_file.animal)&gt;0:
+            
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            fileName, _ = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;Project Files (*.pro);;All Files (*)&#34;, options=options)
+
+            if fileName:
+                name = fileName if fileName.find(&#39;.pro&#39;) &gt; -1  else fileName+&#34;.pro&#34;
+                self.project_file_name = name
+                self.writeProjectXML(name)
+
+                self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+                QMessageBox.about(self, &#34;Salvando arquivos&#34;, &#34;Arquivo salvo com sucesso!&#34;)
+        else:
+            QMessageBox.about(self, &#34;Erro&#34;, &#34;Não há dados a salvar&#34;)
+
+    def setCurrentAction(self, newState):
+        self.actionState = newState
+
+    def setup(self):
+        &#39;&#39;&#39;
+        Method that sets internal parameters:
+        - List of capture devices.
+        - List of Rib eye segmentation models.
+        - Detect model input image size.
+        &#39;&#39;&#39;
+        self.scene.item = self.scene.addPixmap(QPixmap())
+        try:
+            tree = etree.parse(&#34;GUI/config/conf.xml&#34;)
+            root = tree.getroot()
+
+            #print( root[0].text )
+            print( root.findall(&#39;model/size&#39;)[0].text )
+            self.settings.device = root.findall(&#39;us&#39;)[0].text
+            self.model_name = root.findall(&#39;model/name&#39;)[0].text
+            self.settings.model_size = int(root.findall(&#39;model/size&#39;)[0].text)
+            self.settings.selected_model = self.model_name + &#39;_&#39; + str(self.settings.model_size)
+            self.image_size = self.settings.model_size
+
+        except OSError:
+            if not os.path.exists(&#39;GUI/config/&#39;):
+                os.makedirs(&#34;GUI/config/&#34;, exist_ok=True)
+
+            root = etree.Element(&#34;system&#34;)
+            us = etree.SubElement(root, &#39;us&#39;)
+            us.text = &#39;/dev/video0&#39;
+            
+            model = etree.SubElement(root, &#39;model&#39;)
+            name = etree.SubElement(model, &#39;name&#39;)
+            name.text = &#39;unet&#39;
+            size = etree.SubElement(model, &#39;size&#39;)
+            size.text = &#39;128&#39;
+
+            tree = etree.ElementTree(root)
+            tree.write(&#39;GUI/config/conf.xml&#39;, pretty_print=True, xml_declaration=True,   encoding=&#34;utf-8&#34;)  
+
+        try:
+            self.vs = VideoStream(device=int(self.settings.device[-1]))
+            print(&#39;started&#39;)
+        except Exception as e: 
+            print(&#34;Não foi possível iniciar o dispositivo de captura: &#34;, e)
+
+    
+    def openAboutDialog(self):
+        self.about.exec()
+
+    def openSettings(self):
+        ret_val = self.settings.exec()
+        
+        #if ret_val == QDialogButtonBox.Ok:
+        #     print(settings.model_list[settings.cb_pipeline.currentIndex()])
+        self.model_name = self.settings.selected_model
+        self.image_size = self.settings.model_size
+        print(self.model_name)
+        print(self.image_size)
+
+        print(&#39;settings&#39;, self.settings.device)
+        self.vs.changeDevice(int(self.settings.device[-1]))
+
+        #print(self.lbl_stream.height())
+        #print(self.lbl_stream.width())
+
+
+    def applySegmentation(self):
+        &#39;&#39;&#39;
+        Aplies Rib eye segmentation. The segmentation mask generates a polygon that feeds the polygon object in GraphicsView.
+        &#39;&#39;&#39;
+        if self.model_name is not None:
+            #image = cv2.imread(&#34;GUI/res/icons/410A_AOL-AOriginal.bmp&#34;, cv2.IMREAD_COLOR)
+
+            new_size = self.lbl_stream.size()
+
+            print(&#39;size::::&#39;, self.buffer.shape)
+            image = self.buffer
+            orig_im = image.copy()
+            image = cv2.resize(image, (self.image_size, self.image_size))
+            
+            im_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            image = image / 255.
+            image = np.expand_dims(image, axis=0)
+
+            print(&#39;shape&#39;, image.shape)         
+
+            result = self.settings.model.predict(image)
+            result = result &gt; 0.5
+
+            print(&#39;pred shape&#39;, result[0].squeeze().shape)
+
+            areaPrediction, _ = pixel_area(result[0].squeeze()*255 &gt; 0, result[0].squeeze() &gt; 0, cl=range(2))
+            
+            px_size = self.PIXEL_SIZE[str(self.settings.model_size)]
+            print(f&#39;pixel area: {areaPrediction[1]}, aol area: {areaPrediction[1]*px_size} cm^2&#39;)
+            
+            self.new_file.animal[0].ribeye.size = float(areaPrediction[1]*px_size)
+            self.new_file.tbl_animais.model()._data[0].ribeye.size = float(areaPrediction[1]*px_size)
+            self.new_file.tbl_animais.model().layoutChanged.emit()
+
+
+            #im = np.require(result[0].squeeze()*255, np.uint8, &#39;C&#39;) 
+            #rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB )
+            im = self.overlay(image, result[0].squeeze()*255)
+
+            im = cv2.resize(im, (new_size.width(), new_size.height()))
+            result = cv2.resize(result.squeeze(axis=0).astype(np.uint8), (new_size.width(), new_size.height()))
+            result = np.expand_dims(result, axis=0)
+            result = np.expand_dims(result, axis=-1)
+
+            gray_color_table = [qRgb(i, i, i) for i in range(256)]
+
+            copy = im.copy()
+
+            imgray = cv2.cvtColor(im, cv2.COLOR_RGB2GRAY)
+            ret, thresh = cv2.threshold(np.array(result[0].squeeze()*255, dtype=&#39;uint8&#39;), 127, 255, 0)
+
+            
+            contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+            cv2.drawContours(copy, contours, -1, (255, 0, 0), 2)
+
+            
+            # cv2.imshow(&#39;contours&#39;, copy)
+            # cv2.waitKey(0)
+            # cv2.destroyAllWindows()
+            # plt.imshow(result[0].squeeze()*255)
+            # plt.show()
+            #dst_image = cv2.applyColorMap(result[0].squeeze()*255, cv2.COLORMAP_AUTUMN)
+
+            
+            orig_im = cv2.resize(orig_im, (new_size.width(), new_size.height()))
+            
+            qImg = QImage( orig_im.data , new_size.width(), new_size.height(), copy.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+            #qImg.setColorTable(gray_color_table)
+            #qImg = qImg.scaledToWidth(self.lbl_stream.width()*0.9)
+
+            pix = QPixmap(qImg)
+            #self.lbl_stream.setPixmap(QPixmap.fromImage(qImg))
+            if not hasattr(self.scene, &#39;item&#39;):
+                #print(self.item)
+                self.scene.item = self.scene.addPixmap(pix)
+            else:
+                self.scene.item.setPixmap(pix)
+
+            pts = self.toQPoint(contours[0])
+            #aolp = QPolygonF(pts)
+            #pen = QPen(Qt.white, 1.5, Qt.SolidLine)
+            #self.scene.aol = self.scene.addPolygon(aolp, pen)
+            self.scene.points = pts
+
+            for pt in pts:
+                self.scene.polygon_item.addPoint(pt)
+
+            self.updateView()
+    
+    def toQPoint(self, npoints):
+        points = list()
+
+        for p in npoints:
+            points.append(QPointF(p[0,0], p[0,1]))
+        return points
+            
+    def updateView(self):
+        scene = self.lbl_stream.scene()
+        r = scene.sceneRect()
+        self.lbl_stream.fitInView(r, Qt.KeepAspectRatio)
+
+    def resizeEvent(self, event):
+        self.updateView()
+
+    def showEvent(self, event):
+        # ensure that the update only happens when showing the window
+        # programmatically, otherwise it also happen when unminimizing the
+        # window or changing virtual desktop
+        if not event.spontaneous():
+            #print(&#39;show event&#39;)
+            self.updateView()
+
+    def overlay(self, x, result):
+        #green mask
+        colors = [  [0, 255, 0] ]
+        print(x.shape)
+        
+        overlay = overlay_mask(img=x*255, masks=[result], colorMap=colors)
+
+        #plt.axis(&#39;off&#39;)
+        #plt.suptitle(&#39;overlayed predicted&#39;)
+        #plt.imshow(overlay[0])
+        #plt.show()
+        #plt.savefig(self.save_path+&#39;/out_overlayed_predicted_ss_&#39;+str(index)+&#39;.png&#39;, dpi=300)
+
+        return overlay[0]
+
+    def newFile(self):
+
+        ret_val = self.new_file.exec()
+ 
+    
+ 
+def main(): 
+    app = QApplication(sys.argv)
+    window = UI()
+    app.exec_()
+
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="USTool.main_ui.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main(): 
+    app = QApplication(sys.argv)
+    window = UI()
+    app.exec_()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="USTool.main_ui.ActionStates"><code class="flex name class">
+<span>class <span class="ident">ActionStates</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This enumeration is used to control the application mode.
+In Ribeye mode, the segmentation model is enabled. In IMF, only the image capture is enabled.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ActionStates(Enum):
+    &#39;&#39;&#39;
+    This enumeration is used to control the application mode. 
+    In Ribeye mode, the segmentation model is enabled. In IMF, only the image capture is enabled.
+    &#39;&#39;&#39;
+    #TODO train a model to predict the line of IMF. 
+    #TODO create a menu for IMF image capture.
+    Segm_Ribeye = 0
+    Segm_IMF = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="USTool.main_ui.ActionStates.Segm_IMF"><code class="name">var <span class="ident">Segm_IMF</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="USTool.main_ui.ActionStates.Segm_Ribeye"><code class="name">var <span class="ident">Segm_Ribeye</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="USTool.main_ui.NewFile"><code class="flex name class">
+<span>class <span class="ident">NewFile</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Maintains the TableModel with Cattle information.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NewFile(QDialog):
+    &#39;&#39;&#39;
+    Maintains the TableModel with Cattle information. 
+    &#39;&#39;&#39;
+    #TODO Reformulate this class to mantain multiple cattle trait information per animal. 
+    def __init__(self):
+        super(NewFile, self).__init__()
+        uic.loadUi(&#34;GUI/NewFileDialog.ui&#34;, self)
+
+        #print(AnimalTableView())
+        self.tbl_animais = AnimalTableView(self.findChild(QTableView, &#34;tblDados&#34;))
+        
+
+        self.animal = [Cattle()]
+
+        #model = QStandardItemModel()
+        #model.setHorizontalHeaderLabels([&#39;Id&#39;, &#39;AOL&#39;, &#39;EGS&#39;, &#39;Picanha&#39;])
+        model = AnimalTableModel(self.animal)
+
+        #self.tbl_animais = AnimalTableView(model)
+        self.tbl_animais.setModel(model)
+        self.tbl_animais.setGeometry(QtCore.QRect(10, 20, 470, 320))
+        self.tbl_animais.setColumnWidth(1, 120)
+        #self.tbl_animais.resizeColumnsToContents()
+
+        header = self.tbl_animais.horizontalHeader()
+        header.setDefaultAlignment(Qt.AlignHCenter)
+
+        self.tbl_animais.doubleClicked.connect(self.tableDoubleClicked)
+    
+
+    def tableDoubleClicked(self):
+        row = self.tbl_animais.selectionModel().currentIndex().row()
+        idx = self.tbl_animais.selectionModel().currentIndex()
+        d = self.tbl_animais.model().data(idx, Qt.DisplayRole)
+        ob = self.tbl_animais.model().getAnimal(idx, Qt.DisplayRole)
+        # print(type(ob))
+        #id_us = self.tbl_animais.model().index(row, 0)
+        #o = id_us
+        #print(o)
+        #print (&#34;index : &#34; + id_us)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QDialog</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="USTool.main_ui.NewFile.tableDoubleClicked"><code class="name flex">
+<span>def <span class="ident">tableDoubleClicked</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tableDoubleClicked(self):
+    row = self.tbl_animais.selectionModel().currentIndex().row()
+    idx = self.tbl_animais.selectionModel().currentIndex()
+    d = self.tbl_animais.model().data(idx, Qt.DisplayRole)
+    ob = self.tbl_animais.model().getAnimal(idx, Qt.DisplayRole)
+    # print(type(ob))
+    #id_us = self.tbl_animais.model().index(row, 0)
+    #o = id_us
+    #print(o)
+    #print (&#34;index : &#34; + id_us)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="USTool.main_ui.SettingsDialog"><code class="flex name class">
+<span>class <span class="ident">SettingsDialog</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Miscellaneous project configurations</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SettingsDialog(QDialog):
+    &#39;&#39;&#39;
+    Miscellaneous project configurations
+    &#39;&#39;&#39;
+
+    def __init__(self):
+        super(SettingsDialog, self).__init__()
+        uic.loadUi(&#34;GUI/Settings.ui&#34;, self)
+
+        self.cb_us = self.findChild(QComboBox, &#34;cbUs&#34;)
+        self.txt_us = self.findChild(QLineEdit, &#34;txtUs&#34;)
+        self.cb_pipeline = self.findChild(QComboBox, &#34;cbPipeline&#34;)
+        self.button_box = self.findChild(QDialogButtonBox, &#34;buttonBox&#34;)
+
+        self.buttonBox.accepted.connect(self.accept2)
+
+        self.selected_model = None
+        self.model_size = None
+        self.model = 0
+
+        self.device = self.listDevices()
+        self.listPipelines()
+
+
+    def load_trained_model(self):
+        &#39;&#39;&#39;
+        Loads the previously selected segmentation model.
+        &#39;&#39;&#39;
+        model_path = &#39;GUI/models/&#39;+self.selected_model+&#39;/model.h5&#39;
+
+        model = load_model(model_path, custom_objects={
+            &#39;dice&#39;: dice,
+            &#39;relu6&#39;: ReLU})
+
+        #print(model)
+        
+        self.model = model
+
+    
+    def accept2(self):
+        self.selected_model = self.model_list[self.cb_pipeline.currentIndex()]
+        self.model_size = int(self.selected_model.split(&#39;_&#39;)[1])
+        
+        self.setWindowTitle(&#39;Atualizando configurações, aguarde...&#39;)
+        
+        self.device = self.cb_us.currentText()
+        ###############################################################################
+
+        t = threading.Thread(target=self.load_trained_model, args=())
+        
+        t.start()
+        t.join()
+
+        return super().accept()
+
+    def listPipelines(self):
+        &#39;&#39;&#39;
+        Feeds the available models to use in segmentation. Default model was trained with standard UNet model.
+        &#39;&#39;&#39;
+        self.models = {}
+        self.model_list = os.listdir(&#39;GUI/models&#39;)
+        model_names = list()
+
+        for m in self.model_list:
+            key, val = m.split(&#39;_&#39;)
+            if key not in self.models:
+                self.models[key] = list()
+            self.models[key].append(val)
+            model_names.append( f&#39;{key.capitalize()} - Resolução {val}x{val} px&#39; )
+
+        self.cb_pipeline.clear()
+        self.cb_pipeline.addItems(model_names)
+
+        #print(models)
+
+    def listDevices(self):
+        &#39;&#39;&#39;
+        Lists all video capture devices recognized by the OS.
+        &#39;&#39;&#39;
+        devs = [&#34;/dev/&#34;+el for el in list(filter( lambda x: x.startswith(&#39;video&#39;), os.listdir(&#39;/dev&#39;)))]
+        print(devs)
+
+        devs = sorted(devs)
+        
+        self.cb_us.clear()
+        devs.insert(0, &#39;-&#39;)
+        self.cb_us.addItems(devs)
+
+        return devs</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QDialog</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="USTool.main_ui.SettingsDialog.accept2"><code class="name flex">
+<span>def <span class="ident">accept2</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def accept2(self):
+    self.selected_model = self.model_list[self.cb_pipeline.currentIndex()]
+    self.model_size = int(self.selected_model.split(&#39;_&#39;)[1])
+    
+    self.setWindowTitle(&#39;Atualizando configurações, aguarde...&#39;)
+    
+    self.device = self.cb_us.currentText()
+    ###############################################################################
+
+    t = threading.Thread(target=self.load_trained_model, args=())
+    
+    t.start()
+    t.join()
+
+    return super().accept()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.SettingsDialog.listDevices"><code class="name flex">
+<span>def <span class="ident">listDevices</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lists all video capture devices recognized by the OS.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def listDevices(self):
+    &#39;&#39;&#39;
+    Lists all video capture devices recognized by the OS.
+    &#39;&#39;&#39;
+    devs = [&#34;/dev/&#34;+el for el in list(filter( lambda x: x.startswith(&#39;video&#39;), os.listdir(&#39;/dev&#39;)))]
+    print(devs)
+
+    devs = sorted(devs)
+    
+    self.cb_us.clear()
+    devs.insert(0, &#39;-&#39;)
+    self.cb_us.addItems(devs)
+
+    return devs</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.SettingsDialog.listPipelines"><code class="name flex">
+<span>def <span class="ident">listPipelines</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Feeds the available models to use in segmentation. Default model was trained with standard UNet model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def listPipelines(self):
+    &#39;&#39;&#39;
+    Feeds the available models to use in segmentation. Default model was trained with standard UNet model.
+    &#39;&#39;&#39;
+    self.models = {}
+    self.model_list = os.listdir(&#39;GUI/models&#39;)
+    model_names = list()
+
+    for m in self.model_list:
+        key, val = m.split(&#39;_&#39;)
+        if key not in self.models:
+            self.models[key] = list()
+        self.models[key].append(val)
+        model_names.append( f&#39;{key.capitalize()} - Resolução {val}x{val} px&#39; )
+
+    self.cb_pipeline.clear()
+    self.cb_pipeline.addItems(model_names)
+
+    #print(models)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.SettingsDialog.load_trained_model"><code class="name flex">
+<span>def <span class="ident">load_trained_model</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads the previously selected segmentation model.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_trained_model(self):
+    &#39;&#39;&#39;
+    Loads the previously selected segmentation model.
+    &#39;&#39;&#39;
+    model_path = &#39;GUI/models/&#39;+self.selected_model+&#39;/model.h5&#39;
+
+    model = load_model(model_path, custom_objects={
+        &#39;dice&#39;: dice,
+        &#39;relu6&#39;: ReLU})
+
+    #print(model)
+    
+    self.model = model</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="USTool.main_ui.TimerMessageBox"><code class="flex name class">
+<span>class <span class="ident">TimerMessageBox</span></span>
+<span>(</span><span>timeout=4, parent=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>QMessageBox(parent: typing.Optional[QWidget] = None)
+QMessageBox(icon: QMessageBox.Icon, title: str, text: str, buttons: Union[QMessageBox.StandardButtons, QMessageBox.StandardButton] = QMessageBox.NoButton, parent: typing.Optional[QWidget] = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.Dialog|Qt.MSWindowsFixedSizeDialogHint)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TimerMessageBox(QMessageBox):
+    def __init__(self, timeout=4, parent=None):
+        super(TimerMessageBox, self).__init__(parent)
+        self.setWindowTitle(&#34;Aguarde...&#34;)
+        self.time_to_wait = timeout
+        self.setText(&#39;Atualizando informações (Fechará automaticamente em alguns instantes)&#39;)
+        self.setStandardButtons(QMessageBox.NoButton)
+        self.timer = QTimer(self)
+        self.timer.setInterval(100)
+        self.timer.timeout.connect(self.changeContent)
+        self.timer.start()
+
+    def changeContent(self):
+        self.setText(&#39;Atualizando informações (Fechará automaticamente em alguns instantes)&#39;)
+        if(self.time_to_wait&gt;0):
+            self.time_to_wait -= 1
+        if self.time_to_wait &lt;= 0:
+            self.close()
+
+    def closeEvent(self, event):
+        self.timer.stop()
+        event.accept()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QMessageBox</li>
+<li>PyQt5.QtWidgets.QDialog</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="USTool.main_ui.TimerMessageBox.changeContent"><code class="name flex">
+<span>def <span class="ident">changeContent</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def changeContent(self):
+    self.setText(&#39;Atualizando informações (Fechará automaticamente em alguns instantes)&#39;)
+    if(self.time_to_wait&gt;0):
+        self.time_to_wait -= 1
+    if self.time_to_wait &lt;= 0:
+        self.close()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.TimerMessageBox.closeEvent"><code class="name flex">
+<span>def <span class="ident">closeEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>closeEvent(self, a0: QCloseEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def closeEvent(self, event):
+    self.timer.stop()
+    event.accept()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="USTool.main_ui.UI"><code class="flex name class">
+<span>class <span class="ident">UI</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>QMainWindow(parent: typing.Optional[QWidget] = None, flags: Union[Qt.WindowFlags, Qt.WindowType] = Qt.WindowFlags())</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UI(QMainWindow):
+    PIXEL_SIZE = {&#39;128&#39;: 0.01326, &#39;256&#39;:0.00331, &#39;512&#39;:0.00083}
+
+    def __init__(self):
+        super(UI, self).__init__()
+        uic.loadUi(&#34;GUI/FrameGraber.ui&#34;, self)
+
+        self.project_file_name = &#34;Projeto em branco&#34;
+        
+        self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+        self.model_name = None
+        self.buffer = None
+        self.vs = None
+
+        self.settings = SettingsDialog()
+        self.settings.setWindowTitle(&#34;Configurações de Sistema&#34;)
+
+        self.new_file = NewFile()
+        self.new_file.setWindowTitle(&#34;Adicionar/editar um animal&#34;)
+
+        self.about = AboutDialog()
+ 
+        # find the widgets in the xml file
+        self.btn_apply = self.findChild(QPushButton, &#34;btnSegmentar&#34;)
+        self.btn_settings = self.findChild(QPushButton, &#34;btnSettings&#34;)
+        self.btn_new = self.findChild(QPushButton, &#34;btnNew&#34;)
+        self.btn_save = self.findChild(QPushButton, &#34;btnSalvar&#34;)
+        #self.lbl_stream = self.findChild(QLabel, &#34;lblStream&#34;)
+        self.lbl_stream = self.findChild(QGraphicsView, &#34;stream&#34;)
+
+        ag = QtWidgets.QActionGroup(self)
+
+        self.action_aol_menu = self.findChild(QAction, &#34;actionSegmentar_AOL&#34;)
+        self.action_imf_menu = self.findChild(QAction, &#34;actionSegmentar_EGS&#34;)
+        self.about_menu = self.findChild(QAction, &#34;action_Sobre&#34;)
+        self.open_menu = self.findChild(QAction, &#34;actionAbrir&#34;)
+        self.new_menu = self.findChild(QAction, &#34;actionNovo&#34;)
+        self.save_menu = self.findChild(QAction, &#34;actionSalvar&#34;)
+        self.import_menu = self.findChild(QAction, &#34;actionImportarPlanilha&#34;)
+        self.import_image_menu = self.findChild(QAction, &#34;actionImportarImagem&#34;)
+        self.export_menu = self.findChild(QAction, &#34;actionExportarPlanilha&#34;)
+        self.export_image_menu = self.findChild(QAction, &#34;actionExportarImagem&#34;)
+        self.start_grabbing_menu = self.findChild(QAction, &#34;actionIniciarCaptura&#34;)
+        self.settings_menu = self.findChild(QAction, &#34;actionConfiguracoes&#34;)
+
+        #self.start_grabbing_menu.setShortcut(QKeySequence(&#34;Ctrl+i&#34;))
+
+        ag.addAction(self.action_aol_menu)
+        ag.addAction(self.action_imf_menu)
+
+        self.actionState = ActionStates.Segm_Ribeye
+
+        #change to graphics obj
+        #self.lbl_stream = GraphicsView(self.lbl_stream)
+        self.scene = GraphicsScene(self)
+        self.lbl_stream.setScene(self.scene)
+        
+        self.lbl_stream.fitInView(self.scene.sceneRect(), Qt.KeepAspectRatio)
+
+        self.btn_apply.clicked.connect(self.applySegmentation)
+        self.btn_settings.clicked.connect(self.openSettings)
+        self.btn_new.clicked.connect(self.newFile)
+        self.btn_save.clicked.connect(self.saveFile)
+        
+        self.about_menu.triggered.connect(self.openAboutDialog)
+        self.open_menu.triggered.connect(self.openFile)
+        self.save_menu.triggered.connect(self.saveFile)
+        self.new_menu.triggered.connect(self.newFile)
+        self.export_menu.triggered.connect(self.exportFile)
+        self.export_image_menu.triggered.connect(self.exportImage)
+        self.import_menu.triggered.connect(self.importFile)
+        self.import_image_menu.triggered.connect(self.importImage)
+        self.start_grabbing_menu.triggered.connect(self.startGrabbing)
+        self.settings_menu.triggered.connect(self.openSettings)
+        self.action_aol_menu.triggered.connect(partial(self.setCurrentAction, ActionStates.Segm_Ribeye))
+        self.action_imf_menu.triggered.connect(partial(self.setCurrentAction, ActionStates.Segm_IMF))
+
+        self.setup()
+        self.settings.load_trained_model()
+ 
+        self.show()
+
+    def importImage(self):
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,&#34;Carregar arquivo&#34;, &#34;&#34;,&#34;Imagem PNG (*.png);;Imagem JPG (*.jpg);;Imagem BMP (*.bmp);;All Files (*)&#34;, options=options)
+        if fileName:
+            new_size = self.lbl_stream.size()
+
+            self.buffer = cv2.imread(fileName, cv2.IMREAD_COLOR)
+            im = cv2.resize(self.buffer, (new_size.width(), new_size.height()))
+            image = QImage( im.data , new_size.width(), new_size.height(), im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+            self.setImage(image)
+            self.new_file.animal[0].ribeye.image_path = fileName
+            self.new_file.tbl_animais.model()._data[0].ribeye.image_path = fileName
+            self.new_file.tbl_animais.model().layoutChanged.emit()
+
+    def exportImage(self):
+        if self.buffer is None:
+            QMessageBox.about(self, &#34;Erro&#34;, &#34;Nenhum arquivo de imagem carregado.&#34;)
+        else:
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            fileName, fi = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;Imagem PNG (*.png);;Imagem JPG (*.jpg);;Imagem BMP (*.bmp);;All Files (*)&#34;, options=options)
+            
+            if fileName:
+                ext = {&#34;Imagem PNG (*.png)&#34;:&#39;.png&#39;, &#39;Imagem JPG (*.jpg)&#39;: &#39;.jpg&#39;, &#39;Imagem BMP (*.bmp)&#39;: &#39;.bmp&#39;}
+                name = ([ext[el] for el in ext if el == fi])[0]
+                name = fileName+name if name not in fileName else fileName
+                cv2.imwrite(name, self.buffer)
+                QMessageBox.about(self, &#34;Sucesso&#34;, &#34;Imagem salva com sucesso.&#34;)
+
+    @pyqtSlot(QImage)
+    def setImage(self, image):
+        pixmap = QPixmap.fromImage(image)
+        self.scene.item.setPixmap(pixmap)
+        self.updateView()
+
+
+    def startGrabbing(self):
+        &#39;&#39;&#39;
+        Starts a QThread and assigns a Worker Thread to it. The thread grabs frames from the capture device and stores them into a buffer.
+        See ProcessWorker to the thread implementation.
+        &#39;&#39;&#39;
+        #if self.buffer is not None:
+        msg = QMessageBox()
+        msg.setWindowTitle(&#34;Sobreposição de arquivo&#34;)
+        msg.setText(&#34;Descartar o arquivo de imagem existente?\nNão será possível recuperá-lo posteriormente!&#34;)
+        msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+        retval = msg.exec_()
+
+        if retval == QMessageBox.Ok:
+            
+            if self.vs.stopped:
+                self.vs = self.vs.start()
+                # self.updateImageWidgetThread()
+                if not hasattr(self, &#39;workerThread&#39;):
+                    self.workerThread = QThread()
+                if hasattr(self, &#39;worker&#39;):
+                    del self.worker
+                self.worker = ProcessWorker(self)
+                self.worker.moveToThread(self.workerThread)
+                self.workerThread.finished.connect(self.worker.deleteLater)
+                self.workerThread.started.connect(self.worker.grab)
+                self.worker.imageChanged.connect(self.setImage)
+                self.workerThread.start()
+                print(&#39;starting grab process. Device: &#39;, self.vs.device)
+                self.workerThread.quit()
+            else:
+                print(&#39;stopping&#39;)
+                self.buffer = self.vs.read()
+                #self.vs.stop()
+                self.vs.stopped = True
+
+        else:
+            QMessageBox.about(self, &#34;Ajuda&#34;, &#34;Para salvar a imagem, vá em\nArquivo&gt;Exportar&gt;Imagem&#34;)
+
+
+    def dfToAnimal(self, df):
+        lan = list()
+        for i in df.index:
+            an = Cattle()
+            for j, idx in enumerate(list(df.columns)):
+                an.setValue(j, list(df[idx])[i])
+
+            lan.append(an)
+        
+        self.new_file.animal = lan
+        #self.new_file.model._data = lan
+        self.new_file.tbl_animais.model()._data = lan
+        self.new_file.tbl_animais.model().layoutChanged.emit()
+
+    def importFile(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,&#34;Abrir arquivo&#34;, &#34;&#34;,&#34;All Files (*);;Arquivos de planilha (*.xlsx)&#34;, options=options)
+        if fileName:
+            self.project_file_name = fileName
+            self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+            elems = pd.read_excel(fileName, &#39;Sheet1&#39;, engine=&#39;openpyxl&#39;)
+            
+            self.dfToAnimal(elems)
+            QMessageBox.about(self, &#34;Abrindo planilha&#34;, &#34;Arquivo importado com sucesso!&#34;)
+
+    def openFile(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getOpenFileName(self,&#34;Abrir arquivo&#34;, &#34;&#34;,&#34;Arquivos de projeto (*.pro);;All Files (*)&#34;, options=options)
+        if fileName:
+            try:
+                an = Cattle()
+                tree = etree.parse(fileName)
+                root = tree.getroot()
+
+                #print( root[0].text )
+                print( root.findall(&#39;name&#39;)[0].text )
+                self.project_file_name = root.findall(&#39;name&#39;)[0].text
+                an.id = root.findall(&#39;cattle/id&#39;)[0].text
+                an.aol = root.findall(&#39;cattle/aol/size&#39;)[0].text
+                an.ribeye.size = root.findall(&#39;cattle/aol/size&#39;)[0].text
+                an.ribeye.image_path = root.findall(&#39;cattle/aol/path&#39;)[0].text
+                an.egs = 0
+                an.picanha = 0
+
+                lan = [an]
+                self.new_file.animal = lan
+                self.new_file.tbl_animais.model()._data = lan
+                self.new_file.tbl_animais.model().layoutChanged.emit()
+                self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+                if os.path.exists(self.new_file.tbl_animais.model()._data[0].ribeye.image_path):
+                    image = cv2.imread(self.new_file.tbl_animais.model()._data[0].ribeye.image_path, cv2.IMREAD_COLOR)
+                    self.buffer = image
+                    im = cv2.resize(self.buffer, (self.image_size, self.image_size))
+                    image = QImage( im.data , self.image_size, self.image_size, im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+                    self.setImage(image)
+
+                    xml_pts = root.findall(&#39;cattle/aol/points&#39;)
+                    
+                    l_points = list()
+                    for elem in xml_pts:
+                        pts = elem.findall(&#39;point&#39;)
+                        for pt in pts:
+                            vals = pt.text.split(&#39;,&#39;)
+                            p = [[int(float(vals[0])), int(float(vals[1])) ]]
+                            l_points.append(p)
+                    np_points = np.array(l_points)
+                    
+                    pts = self.toQPoint(np_points)
+                    self.scene.points = pts
+
+                    for pt in pts:
+                        self.scene.polygon_item.addPoint(pt)
+
+                    self.updateView()
+
+                QMessageBox.about(self, &#34;Carregar projeto&#34;, &#34;Projeto carregado com sucesso!&#34;)
+
+            except OSError:
+                QMessageBox.about(self, &#34;Carregar projeto&#34;, &#34;Erro em carregar o projeto.&#34;)
+
+    def toDict(self):
+        elems = dict((el,[]) for el in Cattle.getHeader())
+
+        for a in self.new_file.animal:
+            al = a.toList()
+            for i,k in enumerate(elems):
+                elems[k].append( al[i] )
+        return elems
+
+
+    def exportFile(self):
+        if len(self.new_file.animal)&gt;0:
+            elems = self.toDict()
+
+            df = pd.DataFrame(elems)
+
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            fileName, _ = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;All Files (*);;Text Files (*.txt)&#34;, options=options)
+
+            if fileName:
+                print(fileName.find(&#39;.xls&#39;) &gt; -1 or fileName.find(&#39;.xlsx&#39;) &gt; -1)
+                
+                name = fileName if fileName.find(&#39;.xls&#39;) &gt; -1 or fileName.find(&#39;.xlsx&#39;) &gt; -1 else fileName+&#34;.xlsx&#34;
+                print(name)
+                writer = pd.ExcelWriter(name, engine=&#39;xlsxwriter&#39;)
+                df.to_excel(writer, sheet_name=&#39;Sheet1&#39;, index=False)
+
+                writer.save()
+                QMessageBox.about(self, &#34;Salvando arquivos&#34;, &#34;Arquivo salvo com sucesso!&#34;)
+
+    def writeProjectXML(self, location):
+        &#39;&#39;&#39;
+        TODO adjust for multi cattle files
+        &#39;&#39;&#39;
+        root = etree.Element(&#34;app&#34;)
+        n = etree.SubElement(root, &#39;name&#39;)
+        n.text = self.project_file_name
+
+        animal = etree.SubElement(root, &#39;cattle&#39;)
+        
+        app_id = etree.SubElement(animal, &#39;id&#39;)
+        app_id.text = str(self.new_file.animal[0].id)
+        
+        aol = etree.SubElement(animal, &#39;aol&#39;)
+        
+        img = etree.SubElement(aol, &#39;path&#39;)
+        img.text = self.new_file.animal[0].ribeye.image_path
+        size = etree.SubElement(aol, &#39;size&#39;)
+        size.text = str(self.new_file.animal[0].ribeye.size)
+
+        #TODO save the points in project xml file.
+        if self.scene.polygon_item.m_points and len(self.scene.polygon_item.m_points)&gt;0:
+            pts = etree.SubElement(aol, &#39;points&#39;)
+            print(&#39;points:&#39;)
+            
+            for pt in self.scene.polygon_item.m_points:
+                p = etree.SubElement(pts, &#39;point&#39;)
+                p.text = f&#39;{pt.x()},{pt.y()}&#39;
+
+        tree = etree.ElementTree(root)
+        tree.write(location, pretty_print=True, xml_declaration=True,   encoding=&#34;utf-8&#34;)  
+
+    def saveFile(self):
+        # TODO save file in the device image resolution
+        if len(self.new_file.animal)&gt;0:
+            
+            options = QFileDialog.Options()
+            options |= QFileDialog.DontUseNativeDialog
+            fileName, _ = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;Project Files (*.pro);;All Files (*)&#34;, options=options)
+
+            if fileName:
+                name = fileName if fileName.find(&#39;.pro&#39;) &gt; -1  else fileName+&#34;.pro&#34;
+                self.project_file_name = name
+                self.writeProjectXML(name)
+
+                self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+                QMessageBox.about(self, &#34;Salvando arquivos&#34;, &#34;Arquivo salvo com sucesso!&#34;)
+        else:
+            QMessageBox.about(self, &#34;Erro&#34;, &#34;Não há dados a salvar&#34;)
+
+    def setCurrentAction(self, newState):
+        self.actionState = newState
+
+    def setup(self):
+        &#39;&#39;&#39;
+        Method that sets internal parameters:
+        - List of capture devices.
+        - List of Rib eye segmentation models.
+        - Detect model input image size.
+        &#39;&#39;&#39;
+        self.scene.item = self.scene.addPixmap(QPixmap())
+        try:
+            tree = etree.parse(&#34;GUI/config/conf.xml&#34;)
+            root = tree.getroot()
+
+            #print( root[0].text )
+            print( root.findall(&#39;model/size&#39;)[0].text )
+            self.settings.device = root.findall(&#39;us&#39;)[0].text
+            self.model_name = root.findall(&#39;model/name&#39;)[0].text
+            self.settings.model_size = int(root.findall(&#39;model/size&#39;)[0].text)
+            self.settings.selected_model = self.model_name + &#39;_&#39; + str(self.settings.model_size)
+            self.image_size = self.settings.model_size
+
+        except OSError:
+            if not os.path.exists(&#39;GUI/config/&#39;):
+                os.makedirs(&#34;GUI/config/&#34;, exist_ok=True)
+
+            root = etree.Element(&#34;system&#34;)
+            us = etree.SubElement(root, &#39;us&#39;)
+            us.text = &#39;/dev/video0&#39;
+            
+            model = etree.SubElement(root, &#39;model&#39;)
+            name = etree.SubElement(model, &#39;name&#39;)
+            name.text = &#39;unet&#39;
+            size = etree.SubElement(model, &#39;size&#39;)
+            size.text = &#39;128&#39;
+
+            tree = etree.ElementTree(root)
+            tree.write(&#39;GUI/config/conf.xml&#39;, pretty_print=True, xml_declaration=True,   encoding=&#34;utf-8&#34;)  
+
+        try:
+            self.vs = VideoStream(device=int(self.settings.device[-1]))
+            print(&#39;started&#39;)
+        except Exception as e: 
+            print(&#34;Não foi possível iniciar o dispositivo de captura: &#34;, e)
+
+    
+    def openAboutDialog(self):
+        self.about.exec()
+
+    def openSettings(self):
+        ret_val = self.settings.exec()
+        
+        #if ret_val == QDialogButtonBox.Ok:
+        #     print(settings.model_list[settings.cb_pipeline.currentIndex()])
+        self.model_name = self.settings.selected_model
+        self.image_size = self.settings.model_size
+        print(self.model_name)
+        print(self.image_size)
+
+        print(&#39;settings&#39;, self.settings.device)
+        self.vs.changeDevice(int(self.settings.device[-1]))
+
+        #print(self.lbl_stream.height())
+        #print(self.lbl_stream.width())
+
+
+    def applySegmentation(self):
+        &#39;&#39;&#39;
+        Aplies Rib eye segmentation. The segmentation mask generates a polygon that feeds the polygon object in GraphicsView.
+        &#39;&#39;&#39;
+        if self.model_name is not None:
+            #image = cv2.imread(&#34;GUI/res/icons/410A_AOL-AOriginal.bmp&#34;, cv2.IMREAD_COLOR)
+
+            new_size = self.lbl_stream.size()
+
+            print(&#39;size::::&#39;, self.buffer.shape)
+            image = self.buffer
+            orig_im = image.copy()
+            image = cv2.resize(image, (self.image_size, self.image_size))
+            
+            im_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            image = image / 255.
+            image = np.expand_dims(image, axis=0)
+
+            print(&#39;shape&#39;, image.shape)         
+
+            result = self.settings.model.predict(image)
+            result = result &gt; 0.5
+
+            print(&#39;pred shape&#39;, result[0].squeeze().shape)
+
+            areaPrediction, _ = pixel_area(result[0].squeeze()*255 &gt; 0, result[0].squeeze() &gt; 0, cl=range(2))
+            
+            px_size = self.PIXEL_SIZE[str(self.settings.model_size)]
+            print(f&#39;pixel area: {areaPrediction[1]}, aol area: {areaPrediction[1]*px_size} cm^2&#39;)
+            
+            self.new_file.animal[0].ribeye.size = float(areaPrediction[1]*px_size)
+            self.new_file.tbl_animais.model()._data[0].ribeye.size = float(areaPrediction[1]*px_size)
+            self.new_file.tbl_animais.model().layoutChanged.emit()
+
+
+            #im = np.require(result[0].squeeze()*255, np.uint8, &#39;C&#39;) 
+            #rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB )
+            im = self.overlay(image, result[0].squeeze()*255)
+
+            im = cv2.resize(im, (new_size.width(), new_size.height()))
+            result = cv2.resize(result.squeeze(axis=0).astype(np.uint8), (new_size.width(), new_size.height()))
+            result = np.expand_dims(result, axis=0)
+            result = np.expand_dims(result, axis=-1)
+
+            gray_color_table = [qRgb(i, i, i) for i in range(256)]
+
+            copy = im.copy()
+
+            imgray = cv2.cvtColor(im, cv2.COLOR_RGB2GRAY)
+            ret, thresh = cv2.threshold(np.array(result[0].squeeze()*255, dtype=&#39;uint8&#39;), 127, 255, 0)
+
+            
+            contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+            cv2.drawContours(copy, contours, -1, (255, 0, 0), 2)
+
+            
+            # cv2.imshow(&#39;contours&#39;, copy)
+            # cv2.waitKey(0)
+            # cv2.destroyAllWindows()
+            # plt.imshow(result[0].squeeze()*255)
+            # plt.show()
+            #dst_image = cv2.applyColorMap(result[0].squeeze()*255, cv2.COLORMAP_AUTUMN)
+
+            
+            orig_im = cv2.resize(orig_im, (new_size.width(), new_size.height()))
+            
+            qImg = QImage( orig_im.data , new_size.width(), new_size.height(), copy.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+            #qImg.setColorTable(gray_color_table)
+            #qImg = qImg.scaledToWidth(self.lbl_stream.width()*0.9)
+
+            pix = QPixmap(qImg)
+            #self.lbl_stream.setPixmap(QPixmap.fromImage(qImg))
+            if not hasattr(self.scene, &#39;item&#39;):
+                #print(self.item)
+                self.scene.item = self.scene.addPixmap(pix)
+            else:
+                self.scene.item.setPixmap(pix)
+
+            pts = self.toQPoint(contours[0])
+            #aolp = QPolygonF(pts)
+            #pen = QPen(Qt.white, 1.5, Qt.SolidLine)
+            #self.scene.aol = self.scene.addPolygon(aolp, pen)
+            self.scene.points = pts
+
+            for pt in pts:
+                self.scene.polygon_item.addPoint(pt)
+
+            self.updateView()
+    
+    def toQPoint(self, npoints):
+        points = list()
+
+        for p in npoints:
+            points.append(QPointF(p[0,0], p[0,1]))
+        return points
+            
+    def updateView(self):
+        scene = self.lbl_stream.scene()
+        r = scene.sceneRect()
+        self.lbl_stream.fitInView(r, Qt.KeepAspectRatio)
+
+    def resizeEvent(self, event):
+        self.updateView()
+
+    def showEvent(self, event):
+        # ensure that the update only happens when showing the window
+        # programmatically, otherwise it also happen when unminimizing the
+        # window or changing virtual desktop
+        if not event.spontaneous():
+            #print(&#39;show event&#39;)
+            self.updateView()
+
+    def overlay(self, x, result):
+        #green mask
+        colors = [  [0, 255, 0] ]
+        print(x.shape)
+        
+        overlay = overlay_mask(img=x*255, masks=[result], colorMap=colors)
+
+        #plt.axis(&#39;off&#39;)
+        #plt.suptitle(&#39;overlayed predicted&#39;)
+        #plt.imshow(overlay[0])
+        #plt.show()
+        #plt.savefig(self.save_path+&#39;/out_overlayed_predicted_ss_&#39;+str(index)+&#39;.png&#39;, dpi=300)
+
+        return overlay[0]
+
+    def newFile(self):
+
+        ret_val = self.new_file.exec()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QMainWindow</li>
+<li>PyQt5.QtWidgets.QWidget</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>PyQt5.QtGui.QPaintDevice</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="USTool.main_ui.UI.PIXEL_SIZE"><code class="name">var <span class="ident">PIXEL_SIZE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="USTool.main_ui.UI.applySegmentation"><code class="name flex">
+<span>def <span class="ident">applySegmentation</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Aplies Rib eye segmentation. The segmentation mask generates a polygon that feeds the polygon object in GraphicsView.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def applySegmentation(self):
+    &#39;&#39;&#39;
+    Aplies Rib eye segmentation. The segmentation mask generates a polygon that feeds the polygon object in GraphicsView.
+    &#39;&#39;&#39;
+    if self.model_name is not None:
+        #image = cv2.imread(&#34;GUI/res/icons/410A_AOL-AOriginal.bmp&#34;, cv2.IMREAD_COLOR)
+
+        new_size = self.lbl_stream.size()
+
+        print(&#39;size::::&#39;, self.buffer.shape)
+        image = self.buffer
+        orig_im = image.copy()
+        image = cv2.resize(image, (self.image_size, self.image_size))
+        
+        im_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        image = image / 255.
+        image = np.expand_dims(image, axis=0)
+
+        print(&#39;shape&#39;, image.shape)         
+
+        result = self.settings.model.predict(image)
+        result = result &gt; 0.5
+
+        print(&#39;pred shape&#39;, result[0].squeeze().shape)
+
+        areaPrediction, _ = pixel_area(result[0].squeeze()*255 &gt; 0, result[0].squeeze() &gt; 0, cl=range(2))
+        
+        px_size = self.PIXEL_SIZE[str(self.settings.model_size)]
+        print(f&#39;pixel area: {areaPrediction[1]}, aol area: {areaPrediction[1]*px_size} cm^2&#39;)
+        
+        self.new_file.animal[0].ribeye.size = float(areaPrediction[1]*px_size)
+        self.new_file.tbl_animais.model()._data[0].ribeye.size = float(areaPrediction[1]*px_size)
+        self.new_file.tbl_animais.model().layoutChanged.emit()
+
+
+        #im = np.require(result[0].squeeze()*255, np.uint8, &#39;C&#39;) 
+        #rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB )
+        im = self.overlay(image, result[0].squeeze()*255)
+
+        im = cv2.resize(im, (new_size.width(), new_size.height()))
+        result = cv2.resize(result.squeeze(axis=0).astype(np.uint8), (new_size.width(), new_size.height()))
+        result = np.expand_dims(result, axis=0)
+        result = np.expand_dims(result, axis=-1)
+
+        gray_color_table = [qRgb(i, i, i) for i in range(256)]
+
+        copy = im.copy()
+
+        imgray = cv2.cvtColor(im, cv2.COLOR_RGB2GRAY)
+        ret, thresh = cv2.threshold(np.array(result[0].squeeze()*255, dtype=&#39;uint8&#39;), 127, 255, 0)
+
+        
+        contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        cv2.drawContours(copy, contours, -1, (255, 0, 0), 2)
+
+        
+        # cv2.imshow(&#39;contours&#39;, copy)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
+        # plt.imshow(result[0].squeeze()*255)
+        # plt.show()
+        #dst_image = cv2.applyColorMap(result[0].squeeze()*255, cv2.COLORMAP_AUTUMN)
+
+        
+        orig_im = cv2.resize(orig_im, (new_size.width(), new_size.height()))
+        
+        qImg = QImage( orig_im.data , new_size.width(), new_size.height(), copy.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+        #qImg.setColorTable(gray_color_table)
+        #qImg = qImg.scaledToWidth(self.lbl_stream.width()*0.9)
+
+        pix = QPixmap(qImg)
+        #self.lbl_stream.setPixmap(QPixmap.fromImage(qImg))
+        if not hasattr(self.scene, &#39;item&#39;):
+            #print(self.item)
+            self.scene.item = self.scene.addPixmap(pix)
+        else:
+            self.scene.item.setPixmap(pix)
+
+        pts = self.toQPoint(contours[0])
+        #aolp = QPolygonF(pts)
+        #pen = QPen(Qt.white, 1.5, Qt.SolidLine)
+        #self.scene.aol = self.scene.addPolygon(aolp, pen)
+        self.scene.points = pts
+
+        for pt in pts:
+            self.scene.polygon_item.addPoint(pt)
+
+        self.updateView()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.dfToAnimal"><code class="name flex">
+<span>def <span class="ident">dfToAnimal</span></span>(<span>self, df)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dfToAnimal(self, df):
+    lan = list()
+    for i in df.index:
+        an = Cattle()
+        for j, idx in enumerate(list(df.columns)):
+            an.setValue(j, list(df[idx])[i])
+
+        lan.append(an)
+    
+    self.new_file.animal = lan
+    #self.new_file.model._data = lan
+    self.new_file.tbl_animais.model()._data = lan
+    self.new_file.tbl_animais.model().layoutChanged.emit()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.exportFile"><code class="name flex">
+<span>def <span class="ident">exportFile</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exportFile(self):
+    if len(self.new_file.animal)&gt;0:
+        elems = self.toDict()
+
+        df = pd.DataFrame(elems)
+
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;All Files (*);;Text Files (*.txt)&#34;, options=options)
+
+        if fileName:
+            print(fileName.find(&#39;.xls&#39;) &gt; -1 or fileName.find(&#39;.xlsx&#39;) &gt; -1)
+            
+            name = fileName if fileName.find(&#39;.xls&#39;) &gt; -1 or fileName.find(&#39;.xlsx&#39;) &gt; -1 else fileName+&#34;.xlsx&#34;
+            print(name)
+            writer = pd.ExcelWriter(name, engine=&#39;xlsxwriter&#39;)
+            df.to_excel(writer, sheet_name=&#39;Sheet1&#39;, index=False)
+
+            writer.save()
+            QMessageBox.about(self, &#34;Salvando arquivos&#34;, &#34;Arquivo salvo com sucesso!&#34;)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.exportImage"><code class="name flex">
+<span>def <span class="ident">exportImage</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exportImage(self):
+    if self.buffer is None:
+        QMessageBox.about(self, &#34;Erro&#34;, &#34;Nenhum arquivo de imagem carregado.&#34;)
+    else:
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, fi = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;Imagem PNG (*.png);;Imagem JPG (*.jpg);;Imagem BMP (*.bmp);;All Files (*)&#34;, options=options)
+        
+        if fileName:
+            ext = {&#34;Imagem PNG (*.png)&#34;:&#39;.png&#39;, &#39;Imagem JPG (*.jpg)&#39;: &#39;.jpg&#39;, &#39;Imagem BMP (*.bmp)&#39;: &#39;.bmp&#39;}
+            name = ([ext[el] for el in ext if el == fi])[0]
+            name = fileName+name if name not in fileName else fileName
+            cv2.imwrite(name, self.buffer)
+            QMessageBox.about(self, &#34;Sucesso&#34;, &#34;Imagem salva com sucesso.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.importFile"><code class="name flex">
+<span>def <span class="ident">importFile</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def importFile(self):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    fileName, _ = QFileDialog.getOpenFileName(self,&#34;Abrir arquivo&#34;, &#34;&#34;,&#34;All Files (*);;Arquivos de planilha (*.xlsx)&#34;, options=options)
+    if fileName:
+        self.project_file_name = fileName
+        self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+        elems = pd.read_excel(fileName, &#39;Sheet1&#39;, engine=&#39;openpyxl&#39;)
+        
+        self.dfToAnimal(elems)
+        QMessageBox.about(self, &#34;Abrindo planilha&#34;, &#34;Arquivo importado com sucesso!&#34;)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.importImage"><code class="name flex">
+<span>def <span class="ident">importImage</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def importImage(self):
+    
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    fileName, _ = QFileDialog.getOpenFileName(self,&#34;Carregar arquivo&#34;, &#34;&#34;,&#34;Imagem PNG (*.png);;Imagem JPG (*.jpg);;Imagem BMP (*.bmp);;All Files (*)&#34;, options=options)
+    if fileName:
+        new_size = self.lbl_stream.size()
+
+        self.buffer = cv2.imread(fileName, cv2.IMREAD_COLOR)
+        im = cv2.resize(self.buffer, (new_size.width(), new_size.height()))
+        image = QImage( im.data , new_size.width(), new_size.height(), im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+        self.setImage(image)
+        self.new_file.animal[0].ribeye.image_path = fileName
+        self.new_file.tbl_animais.model()._data[0].ribeye.image_path = fileName
+        self.new_file.tbl_animais.model().layoutChanged.emit()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.newFile"><code class="name flex">
+<span>def <span class="ident">newFile</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def newFile(self):
+
+    ret_val = self.new_file.exec()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.openAboutDialog"><code class="name flex">
+<span>def <span class="ident">openAboutDialog</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openAboutDialog(self):
+    self.about.exec()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.openFile"><code class="name flex">
+<span>def <span class="ident">openFile</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openFile(self):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    fileName, _ = QFileDialog.getOpenFileName(self,&#34;Abrir arquivo&#34;, &#34;&#34;,&#34;Arquivos de projeto (*.pro);;All Files (*)&#34;, options=options)
+    if fileName:
+        try:
+            an = Cattle()
+            tree = etree.parse(fileName)
+            root = tree.getroot()
+
+            #print( root[0].text )
+            print( root.findall(&#39;name&#39;)[0].text )
+            self.project_file_name = root.findall(&#39;name&#39;)[0].text
+            an.id = root.findall(&#39;cattle/id&#39;)[0].text
+            an.aol = root.findall(&#39;cattle/aol/size&#39;)[0].text
+            an.ribeye.size = root.findall(&#39;cattle/aol/size&#39;)[0].text
+            an.ribeye.image_path = root.findall(&#39;cattle/aol/path&#39;)[0].text
+            an.egs = 0
+            an.picanha = 0
+
+            lan = [an]
+            self.new_file.animal = lan
+            self.new_file.tbl_animais.model()._data = lan
+            self.new_file.tbl_animais.model().layoutChanged.emit()
+            self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+
+            if os.path.exists(self.new_file.tbl_animais.model()._data[0].ribeye.image_path):
+                image = cv2.imread(self.new_file.tbl_animais.model()._data[0].ribeye.image_path, cv2.IMREAD_COLOR)
+                self.buffer = image
+                im = cv2.resize(self.buffer, (self.image_size, self.image_size))
+                image = QImage( im.data , self.image_size, self.image_size, im.strides[0], QImage.Format_RGB888)#.rgbSwapped()
+                self.setImage(image)
+
+                xml_pts = root.findall(&#39;cattle/aol/points&#39;)
+                
+                l_points = list()
+                for elem in xml_pts:
+                    pts = elem.findall(&#39;point&#39;)
+                    for pt in pts:
+                        vals = pt.text.split(&#39;,&#39;)
+                        p = [[int(float(vals[0])), int(float(vals[1])) ]]
+                        l_points.append(p)
+                np_points = np.array(l_points)
+                
+                pts = self.toQPoint(np_points)
+                self.scene.points = pts
+
+                for pt in pts:
+                    self.scene.polygon_item.addPoint(pt)
+
+                self.updateView()
+
+            QMessageBox.about(self, &#34;Carregar projeto&#34;, &#34;Projeto carregado com sucesso!&#34;)
+
+        except OSError:
+            QMessageBox.about(self, &#34;Carregar projeto&#34;, &#34;Erro em carregar o projeto.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.openSettings"><code class="name flex">
+<span>def <span class="ident">openSettings</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def openSettings(self):
+    ret_val = self.settings.exec()
+    
+    #if ret_val == QDialogButtonBox.Ok:
+    #     print(settings.model_list[settings.cb_pipeline.currentIndex()])
+    self.model_name = self.settings.selected_model
+    self.image_size = self.settings.model_size
+    print(self.model_name)
+    print(self.image_size)
+
+    print(&#39;settings&#39;, self.settings.device)
+    self.vs.changeDevice(int(self.settings.device[-1]))
+
+    #print(self.lbl_stream.height())
+    #print(self.lbl_stream.width())</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.overlay"><code class="name flex">
+<span>def <span class="ident">overlay</span></span>(<span>self, x, result)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def overlay(self, x, result):
+    #green mask
+    colors = [  [0, 255, 0] ]
+    print(x.shape)
+    
+    overlay = overlay_mask(img=x*255, masks=[result], colorMap=colors)
+
+    #plt.axis(&#39;off&#39;)
+    #plt.suptitle(&#39;overlayed predicted&#39;)
+    #plt.imshow(overlay[0])
+    #plt.show()
+    #plt.savefig(self.save_path+&#39;/out_overlayed_predicted_ss_&#39;+str(index)+&#39;.png&#39;, dpi=300)
+
+    return overlay[0]</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.resizeEvent"><code class="name flex">
+<span>def <span class="ident">resizeEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>resizeEvent(self, a0: QResizeEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resizeEvent(self, event):
+    self.updateView()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.saveFile"><code class="name flex">
+<span>def <span class="ident">saveFile</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def saveFile(self):
+    # TODO save file in the device image resolution
+    if len(self.new_file.animal)&gt;0:
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        fileName, _ = QFileDialog.getSaveFileName(self,&#34;Salvar arquivo&#34;,&#34;&#34;,&#34;Project Files (*.pro);;All Files (*)&#34;, options=options)
+
+        if fileName:
+            name = fileName if fileName.find(&#39;.pro&#39;) &gt; -1  else fileName+&#34;.pro&#34;
+            self.project_file_name = name
+            self.writeProjectXML(name)
+
+            self.setWindowTitle(f&#39;{APP_NAME} - {APP_VERSION} - {self.project_file_name}&#39;)
+            QMessageBox.about(self, &#34;Salvando arquivos&#34;, &#34;Arquivo salvo com sucesso!&#34;)
+    else:
+        QMessageBox.about(self, &#34;Erro&#34;, &#34;Não há dados a salvar&#34;)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.setCurrentAction"><code class="name flex">
+<span>def <span class="ident">setCurrentAction</span></span>(<span>self, newState)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setCurrentAction(self, newState):
+    self.actionState = newState</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.setImage"><code class="name flex">
+<span>def <span class="ident">setImage</span></span>(<span>self, image)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@pyqtSlot(QImage)
+def setImage(self, image):
+    pixmap = QPixmap.fromImage(image)
+    self.scene.item.setPixmap(pixmap)
+    self.updateView()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.setup"><code class="name flex">
+<span>def <span class="ident">setup</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method that sets internal parameters:
+- List of capture devices.
+- List of Rib eye segmentation models.
+- Detect model input image size.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setup(self):
+    &#39;&#39;&#39;
+    Method that sets internal parameters:
+    - List of capture devices.
+    - List of Rib eye segmentation models.
+    - Detect model input image size.
+    &#39;&#39;&#39;
+    self.scene.item = self.scene.addPixmap(QPixmap())
+    try:
+        tree = etree.parse(&#34;GUI/config/conf.xml&#34;)
+        root = tree.getroot()
+
+        #print( root[0].text )
+        print( root.findall(&#39;model/size&#39;)[0].text )
+        self.settings.device = root.findall(&#39;us&#39;)[0].text
+        self.model_name = root.findall(&#39;model/name&#39;)[0].text
+        self.settings.model_size = int(root.findall(&#39;model/size&#39;)[0].text)
+        self.settings.selected_model = self.model_name + &#39;_&#39; + str(self.settings.model_size)
+        self.image_size = self.settings.model_size
+
+    except OSError:
+        if not os.path.exists(&#39;GUI/config/&#39;):
+            os.makedirs(&#34;GUI/config/&#34;, exist_ok=True)
+
+        root = etree.Element(&#34;system&#34;)
+        us = etree.SubElement(root, &#39;us&#39;)
+        us.text = &#39;/dev/video0&#39;
+        
+        model = etree.SubElement(root, &#39;model&#39;)
+        name = etree.SubElement(model, &#39;name&#39;)
+        name.text = &#39;unet&#39;
+        size = etree.SubElement(model, &#39;size&#39;)
+        size.text = &#39;128&#39;
+
+        tree = etree.ElementTree(root)
+        tree.write(&#39;GUI/config/conf.xml&#39;, pretty_print=True, xml_declaration=True,   encoding=&#34;utf-8&#34;)  
+
+    try:
+        self.vs = VideoStream(device=int(self.settings.device[-1]))
+        print(&#39;started&#39;)
+    except Exception as e: 
+        print(&#34;Não foi possível iniciar o dispositivo de captura: &#34;, e)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.showEvent"><code class="name flex">
+<span>def <span class="ident">showEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>showEvent(self, a0: QShowEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def showEvent(self, event):
+    # ensure that the update only happens when showing the window
+    # programmatically, otherwise it also happen when unminimizing the
+    # window or changing virtual desktop
+    if not event.spontaneous():
+        #print(&#39;show event&#39;)
+        self.updateView()</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.startGrabbing"><code class="name flex">
+<span>def <span class="ident">startGrabbing</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Starts a QThread and assigns a Worker Thread to it. The thread grabs frames from the capture device and stores them into a buffer.
+See ProcessWorker to the thread implementation.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def startGrabbing(self):
+    &#39;&#39;&#39;
+    Starts a QThread and assigns a Worker Thread to it. The thread grabs frames from the capture device and stores them into a buffer.
+    See ProcessWorker to the thread implementation.
+    &#39;&#39;&#39;
+    #if self.buffer is not None:
+    msg = QMessageBox()
+    msg.setWindowTitle(&#34;Sobreposição de arquivo&#34;)
+    msg.setText(&#34;Descartar o arquivo de imagem existente?\nNão será possível recuperá-lo posteriormente!&#34;)
+    msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+    retval = msg.exec_()
+
+    if retval == QMessageBox.Ok:
+        
+        if self.vs.stopped:
+            self.vs = self.vs.start()
+            # self.updateImageWidgetThread()
+            if not hasattr(self, &#39;workerThread&#39;):
+                self.workerThread = QThread()
+            if hasattr(self, &#39;worker&#39;):
+                del self.worker
+            self.worker = ProcessWorker(self)
+            self.worker.moveToThread(self.workerThread)
+            self.workerThread.finished.connect(self.worker.deleteLater)
+            self.workerThread.started.connect(self.worker.grab)
+            self.worker.imageChanged.connect(self.setImage)
+            self.workerThread.start()
+            print(&#39;starting grab process. Device: &#39;, self.vs.device)
+            self.workerThread.quit()
+        else:
+            print(&#39;stopping&#39;)
+            self.buffer = self.vs.read()
+            #self.vs.stop()
+            self.vs.stopped = True
+
+    else:
+        QMessageBox.about(self, &#34;Ajuda&#34;, &#34;Para salvar a imagem, vá em\nArquivo&gt;Exportar&gt;Imagem&#34;)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.toDict"><code class="name flex">
+<span>def <span class="ident">toDict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def toDict(self):
+    elems = dict((el,[]) for el in Cattle.getHeader())
+
+    for a in self.new_file.animal:
+        al = a.toList()
+        for i,k in enumerate(elems):
+            elems[k].append( al[i] )
+    return elems</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.toQPoint"><code class="name flex">
+<span>def <span class="ident">toQPoint</span></span>(<span>self, npoints)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def toQPoint(self, npoints):
+    points = list()
+
+    for p in npoints:
+        points.append(QPointF(p[0,0], p[0,1]))
+    return points</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.updateView"><code class="name flex">
+<span>def <span class="ident">updateView</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updateView(self):
+    scene = self.lbl_stream.scene()
+    r = scene.sceneRect()
+    self.lbl_stream.fitInView(r, Qt.KeepAspectRatio)</code></pre>
+</details>
+</dd>
+<dt id="USTool.main_ui.UI.writeProjectXML"><code class="name flex">
+<span>def <span class="ident">writeProjectXML</span></span>(<span>self, location)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>TODO adjust for multi cattle files</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def writeProjectXML(self, location):
+    &#39;&#39;&#39;
+    TODO adjust for multi cattle files
+    &#39;&#39;&#39;
+    root = etree.Element(&#34;app&#34;)
+    n = etree.SubElement(root, &#39;name&#39;)
+    n.text = self.project_file_name
+
+    animal = etree.SubElement(root, &#39;cattle&#39;)
+    
+    app_id = etree.SubElement(animal, &#39;id&#39;)
+    app_id.text = str(self.new_file.animal[0].id)
+    
+    aol = etree.SubElement(animal, &#39;aol&#39;)
+    
+    img = etree.SubElement(aol, &#39;path&#39;)
+    img.text = self.new_file.animal[0].ribeye.image_path
+    size = etree.SubElement(aol, &#39;size&#39;)
+    size.text = str(self.new_file.animal[0].ribeye.size)
+
+    #TODO save the points in project xml file.
+    if self.scene.polygon_item.m_points and len(self.scene.polygon_item.m_points)&gt;0:
+        pts = etree.SubElement(aol, &#39;points&#39;)
+        print(&#39;points:&#39;)
+        
+        for pt in self.scene.polygon_item.m_points:
+            p = etree.SubElement(pts, &#39;point&#39;)
+            p.text = f&#39;{pt.x()},{pt.y()}&#39;
+
+    tree = etree.ElementTree(root)
+    tree.write(location, pretty_print=True, xml_declaration=True,   encoding=&#34;utf-8&#34;)  </code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="USTool" href="index.html">USTool</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="USTool.main_ui.main" href="#USTool.main_ui.main">main</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="USTool.main_ui.ActionStates" href="#USTool.main_ui.ActionStates">ActionStates</a></code></h4>
+<ul class="">
+<li><code><a title="USTool.main_ui.ActionStates.Segm_IMF" href="#USTool.main_ui.ActionStates.Segm_IMF">Segm_IMF</a></code></li>
+<li><code><a title="USTool.main_ui.ActionStates.Segm_Ribeye" href="#USTool.main_ui.ActionStates.Segm_Ribeye">Segm_Ribeye</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="USTool.main_ui.NewFile" href="#USTool.main_ui.NewFile">NewFile</a></code></h4>
+<ul class="">
+<li><code><a title="USTool.main_ui.NewFile.tableDoubleClicked" href="#USTool.main_ui.NewFile.tableDoubleClicked">tableDoubleClicked</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="USTool.main_ui.SettingsDialog" href="#USTool.main_ui.SettingsDialog">SettingsDialog</a></code></h4>
+<ul class="">
+<li><code><a title="USTool.main_ui.SettingsDialog.accept2" href="#USTool.main_ui.SettingsDialog.accept2">accept2</a></code></li>
+<li><code><a title="USTool.main_ui.SettingsDialog.listDevices" href="#USTool.main_ui.SettingsDialog.listDevices">listDevices</a></code></li>
+<li><code><a title="USTool.main_ui.SettingsDialog.listPipelines" href="#USTool.main_ui.SettingsDialog.listPipelines">listPipelines</a></code></li>
+<li><code><a title="USTool.main_ui.SettingsDialog.load_trained_model" href="#USTool.main_ui.SettingsDialog.load_trained_model">load_trained_model</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="USTool.main_ui.TimerMessageBox" href="#USTool.main_ui.TimerMessageBox">TimerMessageBox</a></code></h4>
+<ul class="">
+<li><code><a title="USTool.main_ui.TimerMessageBox.changeContent" href="#USTool.main_ui.TimerMessageBox.changeContent">changeContent</a></code></li>
+<li><code><a title="USTool.main_ui.TimerMessageBox.closeEvent" href="#USTool.main_ui.TimerMessageBox.closeEvent">closeEvent</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="USTool.main_ui.UI" href="#USTool.main_ui.UI">UI</a></code></h4>
+<ul class="two-column">
+<li><code><a title="USTool.main_ui.UI.PIXEL_SIZE" href="#USTool.main_ui.UI.PIXEL_SIZE">PIXEL_SIZE</a></code></li>
+<li><code><a title="USTool.main_ui.UI.applySegmentation" href="#USTool.main_ui.UI.applySegmentation">applySegmentation</a></code></li>
+<li><code><a title="USTool.main_ui.UI.dfToAnimal" href="#USTool.main_ui.UI.dfToAnimal">dfToAnimal</a></code></li>
+<li><code><a title="USTool.main_ui.UI.exportFile" href="#USTool.main_ui.UI.exportFile">exportFile</a></code></li>
+<li><code><a title="USTool.main_ui.UI.exportImage" href="#USTool.main_ui.UI.exportImage">exportImage</a></code></li>
+<li><code><a title="USTool.main_ui.UI.importFile" href="#USTool.main_ui.UI.importFile">importFile</a></code></li>
+<li><code><a title="USTool.main_ui.UI.importImage" href="#USTool.main_ui.UI.importImage">importImage</a></code></li>
+<li><code><a title="USTool.main_ui.UI.newFile" href="#USTool.main_ui.UI.newFile">newFile</a></code></li>
+<li><code><a title="USTool.main_ui.UI.openAboutDialog" href="#USTool.main_ui.UI.openAboutDialog">openAboutDialog</a></code></li>
+<li><code><a title="USTool.main_ui.UI.openFile" href="#USTool.main_ui.UI.openFile">openFile</a></code></li>
+<li><code><a title="USTool.main_ui.UI.openSettings" href="#USTool.main_ui.UI.openSettings">openSettings</a></code></li>
+<li><code><a title="USTool.main_ui.UI.overlay" href="#USTool.main_ui.UI.overlay">overlay</a></code></li>
+<li><code><a title="USTool.main_ui.UI.resizeEvent" href="#USTool.main_ui.UI.resizeEvent">resizeEvent</a></code></li>
+<li><code><a title="USTool.main_ui.UI.saveFile" href="#USTool.main_ui.UI.saveFile">saveFile</a></code></li>
+<li><code><a title="USTool.main_ui.UI.setCurrentAction" href="#USTool.main_ui.UI.setCurrentAction">setCurrentAction</a></code></li>
+<li><code><a title="USTool.main_ui.UI.setImage" href="#USTool.main_ui.UI.setImage">setImage</a></code></li>
+<li><code><a title="USTool.main_ui.UI.setup" href="#USTool.main_ui.UI.setup">setup</a></code></li>
+<li><code><a title="USTool.main_ui.UI.showEvent" href="#USTool.main_ui.UI.showEvent">showEvent</a></code></li>
+<li><code><a title="USTool.main_ui.UI.startGrabbing" href="#USTool.main_ui.UI.startGrabbing">startGrabbing</a></code></li>
+<li><code><a title="USTool.main_ui.UI.toDict" href="#USTool.main_ui.UI.toDict">toDict</a></code></li>
+<li><code><a title="USTool.main_ui.UI.toQPoint" href="#USTool.main_ui.UI.toQPoint">toQPoint</a></code></li>
+<li><code><a title="USTool.main_ui.UI.updateView" href="#USTool.main_ui.UI.updateView">updateView</a></code></li>
+<li><code><a title="USTool.main_ui.UI.writeProjectXML" href="#USTool.main_ui.UI.writeProjectXML">writeProjectXML</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

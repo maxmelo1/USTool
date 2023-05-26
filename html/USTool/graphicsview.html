@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>USTool.graphicsview API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>USTool.graphicsview</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from PyQt5 import QtGui, QtWidgets
+from PyQt5.QtGui import QPainter, QBrush, QPen, QPolygon, QPolygonF, QPainterPath
+from PyQt5.QtWidgets import QWidget, QGraphicsScene, QApplication, QGraphicsPolygonItem, QGraphicsPathItem
+from PyQt5.QtCore import QLineF, QPointF, Qt
+from enum import Enum
+from functools import partial
+import sys
+#from point2d import Point2D #replaced with QLineF
+
+from PyQt5 import QtCore
+
+class GripItem(QGraphicsPathItem):
+    circle = QtGui.QPainterPath()
+    circle.addEllipse(QtCore.QRectF(-0.5, -0.5, 1, 1))
+    square = QtGui.QPainterPath()
+    square.addRect(QtCore.QRectF(-2, -2, 4, 4))
+
+    def __init__(self, annotation_item, index):
+        super(GripItem, self).__init__()
+        self.m_annotation_item = annotation_item
+        self.m_index = index
+
+        self.setPath(GripItem.circle)
+        self.setBrush(QtGui.QColor(&#34;green&#34;))
+        self.setPen(QtGui.QPen(QtGui.QColor(&#34;green&#34;), 2))
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsSelectable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsMovable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemSendsGeometryChanges, True)
+        self.setAcceptHoverEvents(True)
+        self.setZValue(11)
+        self.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+    
+    def hoverEnterEvent(self, event):
+        self.setPath(GripItem.square)
+        self.setBrush(QtGui.QColor(&#34;red&#34;))
+        super(GripItem, self).hoverEnterEvent(event)
+
+    def hoverLeaveEvent(self, event):
+        self.setPath(GripItem.circle)
+        self.setBrush(QtGui.QColor(&#34;green&#34;))
+        super(GripItem, self).hoverLeaveEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        self.setSelected(False)
+        super(GripItem, self).mouseReleaseEvent(event)
+
+    def itemChange(self, change, value):
+        if change == QtWidgets.QGraphicsItem.ItemPositionChange and self.isEnabled():
+            self.m_annotation_item.movePoint(self.m_index, value)
+        return super(GripItem, self).itemChange(change, value)
+
+class PolygonAnnotation(QtWidgets.QGraphicsPolygonItem):
+    &#39;&#39;&#39;
+    Mantains a list of items each with a list of points of a polygon intended to fit Rib eye area. 
+    &#39;&#39;&#39;
+    def __init__(self, parent=None):
+        super(PolygonAnnotation, self).__init__(parent)
+        self.m_points = []
+        self.setZValue(10)
+        self.setPen(QtGui.QPen(QtGui.QColor(&#34;green&#34;), 2))
+        self.setBrush(QtGui.QColor(0, 255, 0, 80))
+        self.setAcceptHoverEvents(True)
+
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsSelectable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsMovable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemSendsGeometryChanges, True)
+
+        self.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+
+        self.m_items = []
+
+    def number_of_points(self):
+        return len(self.m_items)
+
+    def addPoint(self, p):
+        self.m_points.append(p)
+        self.setPolygon(QtGui.QPolygonF(self.m_points))
+        item = GripItem(self, len(self.m_points) - 1)
+        self.scene().addItem(item)
+        self.m_items.append(item)
+        item.setPos(p)
+
+    def removeLastPoint(self):
+        if self.m_points:
+            self.m_points.pop()
+            self.setPolygon(QtGui.QPolygonF(self.m_points))
+            it = self.m_items.pop()
+            self.scene().removeItem(it)
+            del it
+
+    def movePoint(self, i, p):
+        #print(&#39;moving PA: &#39;, i, p)
+        if 0 &lt;= i &lt; len(self.m_points):
+            self.m_points[i] = self.mapFromScene(p)
+            self.setPolygon(QtGui.QPolygonF(self.m_points))
+
+    def move_item(self, index, pos):
+        if 0 &lt;= index &lt; len(self.m_items):
+            item = self.m_items[index]
+            item.setEnabled(False)
+            item.setPos(pos)
+            item.setEnabled(True)
+
+    def itemChange(self, change, value):
+        if change == QtWidgets.QGraphicsItem.ItemPositionHasChanged:
+            for i, point in enumerate(self.m_points):
+                self.move_item(i, self.mapToScene(point))
+        return super(PolygonAnnotation, self).itemChange(change, value)
+
+    def hoverEnterEvent(self, event):
+        self.setBrush(QtGui.QColor(255, 0, 0, 100))
+        super(PolygonAnnotation, self).hoverEnterEvent(event)
+
+    def hoverLeaveEvent(self, event):
+        self.setBrush(QtGui.QColor(0, 255, 0, 80))
+        super(PolygonAnnotation, self).hoverLeaveEvent(event)
+
+
+class Instructions(Enum):
+    No_Instruction = 0
+    Polygon_Instruction = 1
+
+
+
+
+class GraphicsScene(QGraphicsScene):
+    &#39;&#39;&#39;
+    Controls the drawable area. The scene object has a pixmap loaded from a picture or a video capture and a list of movable polygons.
+    &#39;&#39;&#39;
+    def __init__(self, parent=None):
+        QGraphicsScene.__init__(self, parent)
+        #self.setSceneRect(-100, -100, 200, 200)
+        
+        self.points = list()
+        
+        self.aol = None
+        self.setCurrentInstruction(Instructions.No_Instruction)
+
+
+    def setCurrentInstruction(self, instruction):
+        self.current_instruction = instruction
+        self.polygon_item = PolygonAnnotation()
+        self.addItem(self.polygon_item)
+    
+    
+    # def mouseReleaseEvent(self, event):
+    #     xa = event.scenePos().x()
+    #     ya = event.scenePos().y()
+
+    #     print(&#39;GraphicsScene::MouseReleaseEvent&#39;, xa, ya)
+
+    #     app = QApplication.instance()
+    #     #app.instance().restoreOverrideCursor()
+
+    def mousePressEvent(self, event):
+        pen = QPen(QtCore.Qt.white)
+        brush = QBrush(QtCore.Qt.white)
+        x = event.scenePos().x()
+        y = event.scenePos().y()
+        
+        app = QApplication.instance()
+
+        #app.instance().setOverrideCursor(Qt.OpenHandCursor)
+
+        print(&#39;GraphicsScene::MousePressEvent&#39;, x, y)
+        
+        if self.current_instruction == Instructions.Polygon_Instruction:
+            self.polygon_item.removeLastPoint()
+            self.polygon_item.addPoint(event.scenePos())
+            # movable element
+            self.polygon_item.addPoint(event.scenePos())
+
+        super(GraphicsScene, self).mousePressEvent(event)
+    
+    def mouseMoveEvent(self, event):
+        if self.current_instruction == Instructions.Polygon_Instruction:
+            self.polygon_item.movePoint(self.polygon_item.number_of_points()-1, event.scenePos())
+        super(GraphicsScene, self).mouseMoveEvent(event)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="USTool.graphicsview.GraphicsScene"><code class="flex name class">
+<span>class <span class="ident">GraphicsScene</span></span>
+<span>(</span><span>parent=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Controls the drawable area. The scene object has a pixmap loaded from a picture or a video capture and a list of movable polygons.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GraphicsScene(QGraphicsScene):
+    &#39;&#39;&#39;
+    Controls the drawable area. The scene object has a pixmap loaded from a picture or a video capture and a list of movable polygons.
+    &#39;&#39;&#39;
+    def __init__(self, parent=None):
+        QGraphicsScene.__init__(self, parent)
+        #self.setSceneRect(-100, -100, 200, 200)
+        
+        self.points = list()
+        
+        self.aol = None
+        self.setCurrentInstruction(Instructions.No_Instruction)
+
+
+    def setCurrentInstruction(self, instruction):
+        self.current_instruction = instruction
+        self.polygon_item = PolygonAnnotation()
+        self.addItem(self.polygon_item)
+    
+    
+    # def mouseReleaseEvent(self, event):
+    #     xa = event.scenePos().x()
+    #     ya = event.scenePos().y()
+
+    #     print(&#39;GraphicsScene::MouseReleaseEvent&#39;, xa, ya)
+
+    #     app = QApplication.instance()
+    #     #app.instance().restoreOverrideCursor()
+
+    def mousePressEvent(self, event):
+        pen = QPen(QtCore.Qt.white)
+        brush = QBrush(QtCore.Qt.white)
+        x = event.scenePos().x()
+        y = event.scenePos().y()
+        
+        app = QApplication.instance()
+
+        #app.instance().setOverrideCursor(Qt.OpenHandCursor)
+
+        print(&#39;GraphicsScene::MousePressEvent&#39;, x, y)
+        
+        if self.current_instruction == Instructions.Polygon_Instruction:
+            self.polygon_item.removeLastPoint()
+            self.polygon_item.addPoint(event.scenePos())
+            # movable element
+            self.polygon_item.addPoint(event.scenePos())
+
+        super(GraphicsScene, self).mousePressEvent(event)
+    
+    def mouseMoveEvent(self, event):
+        if self.current_instruction == Instructions.Polygon_Instruction:
+            self.polygon_item.movePoint(self.polygon_item.number_of_points()-1, event.scenePos())
+        super(GraphicsScene, self).mouseMoveEvent(event)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QGraphicsScene</li>
+<li>PyQt5.QtCore.QObject</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="USTool.graphicsview.GraphicsScene.mouseMoveEvent"><code class="name flex">
+<span>def <span class="ident">mouseMoveEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>mouseMoveEvent(self, event: QGraphicsSceneMouseEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mouseMoveEvent(self, event):
+    if self.current_instruction == Instructions.Polygon_Instruction:
+        self.polygon_item.movePoint(self.polygon_item.number_of_points()-1, event.scenePos())
+    super(GraphicsScene, self).mouseMoveEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.GraphicsScene.mousePressEvent"><code class="name flex">
+<span>def <span class="ident">mousePressEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>mousePressEvent(self, event: QGraphicsSceneMouseEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mousePressEvent(self, event):
+    pen = QPen(QtCore.Qt.white)
+    brush = QBrush(QtCore.Qt.white)
+    x = event.scenePos().x()
+    y = event.scenePos().y()
+    
+    app = QApplication.instance()
+
+    #app.instance().setOverrideCursor(Qt.OpenHandCursor)
+
+    print(&#39;GraphicsScene::MousePressEvent&#39;, x, y)
+    
+    if self.current_instruction == Instructions.Polygon_Instruction:
+        self.polygon_item.removeLastPoint()
+        self.polygon_item.addPoint(event.scenePos())
+        # movable element
+        self.polygon_item.addPoint(event.scenePos())
+
+    super(GraphicsScene, self).mousePressEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.GraphicsScene.setCurrentInstruction"><code class="name flex">
+<span>def <span class="ident">setCurrentInstruction</span></span>(<span>self, instruction)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setCurrentInstruction(self, instruction):
+    self.current_instruction = instruction
+    self.polygon_item = PolygonAnnotation()
+    self.addItem(self.polygon_item)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="USTool.graphicsview.GripItem"><code class="flex name class">
+<span>class <span class="ident">GripItem</span></span>
+<span>(</span><span>annotation_item, index)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>QGraphicsPathItem(parent: typing.Optional[QGraphicsItem] = None)
+QGraphicsPathItem(path: QPainterPath, parent: typing.Optional[QGraphicsItem] = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GripItem(QGraphicsPathItem):
+    circle = QtGui.QPainterPath()
+    circle.addEllipse(QtCore.QRectF(-0.5, -0.5, 1, 1))
+    square = QtGui.QPainterPath()
+    square.addRect(QtCore.QRectF(-2, -2, 4, 4))
+
+    def __init__(self, annotation_item, index):
+        super(GripItem, self).__init__()
+        self.m_annotation_item = annotation_item
+        self.m_index = index
+
+        self.setPath(GripItem.circle)
+        self.setBrush(QtGui.QColor(&#34;green&#34;))
+        self.setPen(QtGui.QPen(QtGui.QColor(&#34;green&#34;), 2))
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsSelectable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsMovable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemSendsGeometryChanges, True)
+        self.setAcceptHoverEvents(True)
+        self.setZValue(11)
+        self.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+    
+    def hoverEnterEvent(self, event):
+        self.setPath(GripItem.square)
+        self.setBrush(QtGui.QColor(&#34;red&#34;))
+        super(GripItem, self).hoverEnterEvent(event)
+
+    def hoverLeaveEvent(self, event):
+        self.setPath(GripItem.circle)
+        self.setBrush(QtGui.QColor(&#34;green&#34;))
+        super(GripItem, self).hoverLeaveEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        self.setSelected(False)
+        super(GripItem, self).mouseReleaseEvent(event)
+
+    def itemChange(self, change, value):
+        if change == QtWidgets.QGraphicsItem.ItemPositionChange and self.isEnabled():
+            self.m_annotation_item.movePoint(self.m_index, value)
+        return super(GripItem, self).itemChange(change, value)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QGraphicsPathItem</li>
+<li>PyQt5.QtWidgets.QAbstractGraphicsShapeItem</li>
+<li>PyQt5.QtWidgets.QGraphicsItem</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="USTool.graphicsview.GripItem.circle"><code class="name">var <span class="ident">circle</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="USTool.graphicsview.GripItem.square"><code class="name">var <span class="ident">square</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="USTool.graphicsview.GripItem.hoverEnterEvent"><code class="name flex">
+<span>def <span class="ident">hoverEnterEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>hoverEnterEvent(self, event: QGraphicsSceneHoverEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hoverEnterEvent(self, event):
+    self.setPath(GripItem.square)
+    self.setBrush(QtGui.QColor(&#34;red&#34;))
+    super(GripItem, self).hoverEnterEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.GripItem.hoverLeaveEvent"><code class="name flex">
+<span>def <span class="ident">hoverLeaveEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>hoverLeaveEvent(self, event: QGraphicsSceneHoverEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hoverLeaveEvent(self, event):
+    self.setPath(GripItem.circle)
+    self.setBrush(QtGui.QColor(&#34;green&#34;))
+    super(GripItem, self).hoverLeaveEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.GripItem.itemChange"><code class="name flex">
+<span>def <span class="ident">itemChange</span></span>(<span>self, change, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>itemChange(self, change: QGraphicsItem.GraphicsItemChange, value: Any) -&gt; Any</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def itemChange(self, change, value):
+    if change == QtWidgets.QGraphicsItem.ItemPositionChange and self.isEnabled():
+        self.m_annotation_item.movePoint(self.m_index, value)
+    return super(GripItem, self).itemChange(change, value)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.GripItem.mouseReleaseEvent"><code class="name flex">
+<span>def <span class="ident">mouseReleaseEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>mouseReleaseEvent(self, event: QGraphicsSceneMouseEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mouseReleaseEvent(self, event):
+    self.setSelected(False)
+    super(GripItem, self).mouseReleaseEvent(event)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="USTool.graphicsview.Instructions"><code class="flex name class">
+<span>class <span class="ident">Instructions</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Instructions(Enum):
+    No_Instruction = 0
+    Polygon_Instruction = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="USTool.graphicsview.Instructions.No_Instruction"><code class="name">var <span class="ident">No_Instruction</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="USTool.graphicsview.Instructions.Polygon_Instruction"><code class="name">var <span class="ident">Polygon_Instruction</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation"><code class="flex name class">
+<span>class <span class="ident">PolygonAnnotation</span></span>
+<span>(</span><span>parent=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Mantains a list of items each with a list of points of a polygon intended to fit Rib eye area.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PolygonAnnotation(QtWidgets.QGraphicsPolygonItem):
+    &#39;&#39;&#39;
+    Mantains a list of items each with a list of points of a polygon intended to fit Rib eye area. 
+    &#39;&#39;&#39;
+    def __init__(self, parent=None):
+        super(PolygonAnnotation, self).__init__(parent)
+        self.m_points = []
+        self.setZValue(10)
+        self.setPen(QtGui.QPen(QtGui.QColor(&#34;green&#34;), 2))
+        self.setBrush(QtGui.QColor(0, 255, 0, 80))
+        self.setAcceptHoverEvents(True)
+
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsSelectable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemIsMovable, True)
+        self.setFlag(QtWidgets.QGraphicsItem.ItemSendsGeometryChanges, True)
+
+        self.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+
+        self.m_items = []
+
+    def number_of_points(self):
+        return len(self.m_items)
+
+    def addPoint(self, p):
+        self.m_points.append(p)
+        self.setPolygon(QtGui.QPolygonF(self.m_points))
+        item = GripItem(self, len(self.m_points) - 1)
+        self.scene().addItem(item)
+        self.m_items.append(item)
+        item.setPos(p)
+
+    def removeLastPoint(self):
+        if self.m_points:
+            self.m_points.pop()
+            self.setPolygon(QtGui.QPolygonF(self.m_points))
+            it = self.m_items.pop()
+            self.scene().removeItem(it)
+            del it
+
+    def movePoint(self, i, p):
+        #print(&#39;moving PA: &#39;, i, p)
+        if 0 &lt;= i &lt; len(self.m_points):
+            self.m_points[i] = self.mapFromScene(p)
+            self.setPolygon(QtGui.QPolygonF(self.m_points))
+
+    def move_item(self, index, pos):
+        if 0 &lt;= index &lt; len(self.m_items):
+            item = self.m_items[index]
+            item.setEnabled(False)
+            item.setPos(pos)
+            item.setEnabled(True)
+
+    def itemChange(self, change, value):
+        if change == QtWidgets.QGraphicsItem.ItemPositionHasChanged:
+            for i, point in enumerate(self.m_points):
+                self.move_item(i, self.mapToScene(point))
+        return super(PolygonAnnotation, self).itemChange(change, value)
+
+    def hoverEnterEvent(self, event):
+        self.setBrush(QtGui.QColor(255, 0, 0, 100))
+        super(PolygonAnnotation, self).hoverEnterEvent(event)
+
+    def hoverLeaveEvent(self, event):
+        self.setBrush(QtGui.QColor(0, 255, 0, 80))
+        super(PolygonAnnotation, self).hoverLeaveEvent(event)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>PyQt5.QtWidgets.QGraphicsPolygonItem</li>
+<li>PyQt5.QtWidgets.QAbstractGraphicsShapeItem</li>
+<li>PyQt5.QtWidgets.QGraphicsItem</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="USTool.graphicsview.PolygonAnnotation.addPoint"><code class="name flex">
+<span>def <span class="ident">addPoint</span></span>(<span>self, p)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addPoint(self, p):
+    self.m_points.append(p)
+    self.setPolygon(QtGui.QPolygonF(self.m_points))
+    item = GripItem(self, len(self.m_points) - 1)
+    self.scene().addItem(item)
+    self.m_items.append(item)
+    item.setPos(p)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation.hoverEnterEvent"><code class="name flex">
+<span>def <span class="ident">hoverEnterEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>hoverEnterEvent(self, event: QGraphicsSceneHoverEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hoverEnterEvent(self, event):
+    self.setBrush(QtGui.QColor(255, 0, 0, 100))
+    super(PolygonAnnotation, self).hoverEnterEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation.hoverLeaveEvent"><code class="name flex">
+<span>def <span class="ident">hoverLeaveEvent</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>hoverLeaveEvent(self, event: QGraphicsSceneHoverEvent)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hoverLeaveEvent(self, event):
+    self.setBrush(QtGui.QColor(0, 255, 0, 80))
+    super(PolygonAnnotation, self).hoverLeaveEvent(event)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation.itemChange"><code class="name flex">
+<span>def <span class="ident">itemChange</span></span>(<span>self, change, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>itemChange(self, change: QGraphicsItem.GraphicsItemChange, value: Any) -&gt; Any</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def itemChange(self, change, value):
+    if change == QtWidgets.QGraphicsItem.ItemPositionHasChanged:
+        for i, point in enumerate(self.m_points):
+            self.move_item(i, self.mapToScene(point))
+    return super(PolygonAnnotation, self).itemChange(change, value)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation.movePoint"><code class="name flex">
+<span>def <span class="ident">movePoint</span></span>(<span>self, i, p)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def movePoint(self, i, p):
+    #print(&#39;moving PA: &#39;, i, p)
+    if 0 &lt;= i &lt; len(self.m_points):
+        self.m_points[i] = self.mapFromScene(p)
+        self.setPolygon(QtGui.QPolygonF(self.m_points))</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation.move_item"><code class="name flex">
+<span>def <span class="ident">move_item</span></span>(<span>self, index, pos)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move_item(self, index, pos):
+    if 0 &lt;= index &lt; len(self.m_items):
+        item = self.m_items[index]
+        item.setEnabled(False)
+        item.setPos(pos)
+        item.setEnabled(True)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation.number_of_points"><code class="name flex">
+<span>def <span class="ident">number_of_points</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def number_of_points(self):
+    return len(self.m_items)</code></pre>
+</details>
+</dd>
+<dt id="USTool.graphicsview.PolygonAnnotation.removeLastPoint"><code class="name flex">
+<span>def <span class="ident">removeLastPoint</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeLastPoint(self):
+    if self.m_points:
+        self.m_points.pop()
+        self.setPolygon(QtGui.QPolygonF(self.m_points))
+        it = self.m_items.pop()
+        self.scene().removeItem(it)
+        del it</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="USTool" href="index.html">USTool</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="USTool.graphicsview.GraphicsScene" href="#USTool.graphicsview.GraphicsScene">GraphicsScene</a></code></h4>
+<ul class="">
+<li><code><a title="USTool.graphicsview.GraphicsScene.mouseMoveEvent" href="#USTool.graphicsview.GraphicsScene.mouseMoveEvent">mouseMoveEvent</a></code></li>
+<li><code><a title="USTool.graphicsview.GraphicsScene.mousePressEvent" href="#USTool.graphicsview.GraphicsScene.mousePressEvent">mousePressEvent</a></code></li>
+<li><code><a title="USTool.graphicsview.GraphicsScene.setCurrentInstruction" href="#USTool.graphicsview.GraphicsScene.setCurrentInstruction">setCurrentInstruction</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="USTool.graphicsview.GripItem" href="#USTool.graphicsview.GripItem">GripItem</a></code></h4>
+<ul class="two-column">
+<li><code><a title="USTool.graphicsview.GripItem.circle" href="#USTool.graphicsview.GripItem.circle">circle</a></code></li>
+<li><code><a title="USTool.graphicsview.GripItem.hoverEnterEvent" href="#USTool.graphicsview.GripItem.hoverEnterEvent">hoverEnterEvent</a></code></li>
+<li><code><a title="USTool.graphicsview.GripItem.hoverLeaveEvent" href="#USTool.graphicsview.GripItem.hoverLeaveEvent">hoverLeaveEvent</a></code></li>
+<li><code><a title="USTool.graphicsview.GripItem.itemChange" href="#USTool.graphicsview.GripItem.itemChange">itemChange</a></code></li>
+<li><code><a title="USTool.graphicsview.GripItem.mouseReleaseEvent" href="#USTool.graphicsview.GripItem.mouseReleaseEvent">mouseReleaseEvent</a></code></li>
+<li><code><a title="USTool.graphicsview.GripItem.square" href="#USTool.graphicsview.GripItem.square">square</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="USTool.graphicsview.Instructions" href="#USTool.graphicsview.Instructions">Instructions</a></code></h4>
+<ul class="">
+<li><code><a title="USTool.graphicsview.Instructions.No_Instruction" href="#USTool.graphicsview.Instructions.No_Instruction">No_Instruction</a></code></li>
+<li><code><a title="USTool.graphicsview.Instructions.Polygon_Instruction" href="#USTool.graphicsview.Instructions.Polygon_Instruction">Polygon_Instruction</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="USTool.graphicsview.PolygonAnnotation" href="#USTool.graphicsview.PolygonAnnotation">PolygonAnnotation</a></code></h4>
+<ul class="two-column">
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.addPoint" href="#USTool.graphicsview.PolygonAnnotation.addPoint">addPoint</a></code></li>
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.hoverEnterEvent" href="#USTool.graphicsview.PolygonAnnotation.hoverEnterEvent">hoverEnterEvent</a></code></li>
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.hoverLeaveEvent" href="#USTool.graphicsview.PolygonAnnotation.hoverLeaveEvent">hoverLeaveEvent</a></code></li>
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.itemChange" href="#USTool.graphicsview.PolygonAnnotation.itemChange">itemChange</a></code></li>
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.movePoint" href="#USTool.graphicsview.PolygonAnnotation.movePoint">movePoint</a></code></li>
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.move_item" href="#USTool.graphicsview.PolygonAnnotation.move_item">move_item</a></code></li>
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.number_of_points" href="#USTool.graphicsview.PolygonAnnotation.number_of_points">number_of_points</a></code></li>
+<li><code><a title="USTool.graphicsview.PolygonAnnotation.removeLastPoint" href="#USTool.graphicsview.PolygonAnnotation.removeLastPoint">removeLastPoint</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
