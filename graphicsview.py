@@ -50,6 +50,9 @@ class GripItem(QGraphicsPathItem):
         return super(GripItem, self).itemChange(change, value)
 
 class PolygonAnnotation(QtWidgets.QGraphicsPolygonItem):
+    '''
+    Mantains a list of items each with a list of points of a polygon intended to fit Rib eye area. 
+    '''
     def __init__(self, parent=None):
         super(PolygonAnnotation, self).__init__(parent)
         self.m_points = []
@@ -121,6 +124,9 @@ class Instructions(Enum):
 
 
 class GraphicsScene(QGraphicsScene):
+    '''
+    Controls the drawable area. The scene object has a pixmap loaded from a picture or a video capture and a list of movable polygons.
+    '''
     def __init__(self, parent=None):
         QGraphicsScene.__init__(self, parent)
         #self.setSceneRect(-100, -100, 200, 200)

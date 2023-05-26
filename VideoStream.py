@@ -9,6 +9,9 @@ from PyQt5.QtCore import QObject, QThread, pyqtSignal
 
 
 class VideoStream:
+    '''
+    Mantains a buffer of a video capture device. 
+    '''
     def __init__(self, device=0, size=300):
         self.stream = cv2.VideoCapture(device, cv2.CAP_V4L)
         self.device = device
@@ -75,7 +78,14 @@ class VideoStream:
 
 
 class ProcessWorker(QObject):
+    '''
+    A Worker Thread used to handle the VideoStream object. 
+    '''
+
     imageChanged = pyqtSignal(QImage)
+    '''
+    This signal is connected to UI::setImage slot
+    '''
 
     def __init__(self, mw):
         super(ProcessWorker, self).__init__()

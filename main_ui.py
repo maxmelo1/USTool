@@ -71,6 +71,10 @@ class TimerMessageBox(QMessageBox):
 
 
 class NewFile(QDialog):
+    '''
+    Maintains the TableModel with Cattle information. 
+    '''
+    #TODO Reformulate this class to mantain multiple cattle trait information per animal. 
     def __init__(self):
         super(NewFile, self).__init__()
         uic.loadUi("GUI/NewFileDialog.ui", self)
@@ -102,7 +106,7 @@ class NewFile(QDialog):
         idx = self.tbl_animais.selectionModel().currentIndex()
         d = self.tbl_animais.model().data(idx, Qt.DisplayRole)
         ob = self.tbl_animais.model().getAnimal(idx, Qt.DisplayRole)
-        print(type(ob))
+        # print(type(ob))
         #id_us = self.tbl_animais.model().index(row, 0)
         #o = id_us
         #print(o)
@@ -112,6 +116,10 @@ class NewFile(QDialog):
 
 
 class SettingsDialog(QDialog):
+    '''
+    Miscellaneous project configurations
+    '''
+
     def __init__(self):
         super(SettingsDialog, self).__init__()
         uic.loadUi("GUI/Settings.ui", self)
@@ -132,6 +140,9 @@ class SettingsDialog(QDialog):
 
 
     def load_trained_model(self):
+        '''
+        Loads the previously selected segmentation model.
+        '''
         model_path = 'GUI/models/'+self.selected_model+'/model.h5'
 
         model = load_model(model_path, custom_objects={
@@ -160,6 +171,9 @@ class SettingsDialog(QDialog):
         return super().accept()
 
     def listPipelines(self):
+        '''
+        Feeds the available models to use in segmentation. Default model was trained with standard UNet model.
+        '''
         self.models = {}
         self.model_list = os.listdir('GUI/models')
         model_names = list()
@@ -177,7 +191,9 @@ class SettingsDialog(QDialog):
         #print(models)
 
     def listDevices(self):
-        
+        '''
+        Lists all video capture devices recognized by the OS.
+        '''
         devs = ["/dev/"+el for el in list(filter( lambda x: x.startswith('video'), os.listdir('/dev')))]
         print(devs)
 
@@ -191,6 +207,12 @@ class SettingsDialog(QDialog):
 
 
 class ActionStates(Enum):
+    '''
+    This enumeration is used to control the application mode. 
+    In Ribeye mode, the segmentation model is enabled. In IMF, only the image capture is enabled.
+    '''
+    #TODO train a model to predict the line of IMF. 
+    #TODO create a menu for IMF image capture.
     Segm_Ribeye = 0
     Segm_IMF = 1
 
@@ -518,6 +540,12 @@ class UI(QMainWindow):
         self.actionState = newState
 
     def setup(self):
+        '''
+        Method that sets internal parameters:
+        - List of capture devices.
+        - List of Rib eye segmentation models.
+        - Detect model input image size.
+        '''
         self.scene.item = self.scene.addPixmap(QPixmap())
         try:
             tree = etree.parse("GUI/config/conf.xml")
@@ -576,7 +604,9 @@ class UI(QMainWindow):
 
 
     def applySegmentation(self):
-        
+        '''
+        Aplies Rib eye segmentation. The segmentation mask generates a polygon that feeds the polygon object in GraphicsView.
+        '''
         if self.model_name is not None:
             #image = cv2.imread("GUI/res/icons/410A_AOL-AOriginal.bmp", cv2.IMREAD_COLOR)
 
