@@ -155,6 +155,9 @@ class SettingsDialog(QDialog):
 
     
     def accept2(self):
+        '''
+        Slot to the dialog accept signal. Preloads a thread with the model and update default configurations. 
+        '''
         self.selected_model = self.model_list[self.cb_pipeline.currentIndex()]
         self.model_size = int(self.selected_model.split('_')[1])
         
@@ -338,6 +341,10 @@ class UI(QMainWindow):
 
 
     def startGrabbing(self):
+        '''
+        Starts a QThread and assigns a Worker Thread to it. The thread grabs frames from the capture device and stores them into a buffer.
+        See ProcessWorker to the thread implementation.
+        '''
         #if self.buffer is not None:
         msg = QMessageBox()
         msg.setWindowTitle("Sobreposição de arquivo")
@@ -520,6 +527,7 @@ class UI(QMainWindow):
         tree.write(location, pretty_print=True, xml_declaration=True,   encoding="utf-8")  
 
     def saveFile(self):
+        # TODO save file in the device image resolution
         if len(self.new_file.animal)>0:
             
             options = QFileDialog.Options()
