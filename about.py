@@ -1,6 +1,5 @@
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
 
-
 class AboutDialog(QtWidgets.QDialog):
     def __init__(self):
         super(AboutDialog, self).__init__()

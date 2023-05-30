@@ -1,0 +1,12 @@
+-Caso ocorra o erro: qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, wayland-xcomposite-egl, wayland-xcomposite-glx, webgl, xcb.
+
+-Rodar isso: "sudo apt-get install libxcb-xinerama0"
+
+-painel com suporte a multiplas fotos por animal
+
+-Ajustar escala 
+
+-Bbox fixa para marmoreio
