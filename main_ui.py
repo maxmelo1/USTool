@@ -747,7 +747,7 @@ class UI(QMainWindow):
 def main(): 
     app = QApplication(sys.argv)
     window = UI()
-    app.exec_()
+    sys.exit(app.exec_())
 
 if __name__ == '__main__':
     main()

@@ -5,10 +5,10 @@ matplotlib==3.7.1
 numpy==1.23.5
 opencv_python_headless==4.7.0.72
 pandas==1.5.3
-Pillow==9.4.0
 Pillow==9.5.0
 pydensecrf==1.0rc2
 PyQt5==5.15.9
 PyQt5_sip==12.11.1
-skimage==0.0
+scikit-image
 tensorflow==2.12.0
+XlsxWriter
