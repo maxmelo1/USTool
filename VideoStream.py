@@ -112,6 +112,8 @@ class ProcessWorker(QObject):
                 #img = QImage( im_gray.data , self.mw.image_size, self.mw.image_size, im_gray.strides[0], QImage.Format_RGB888)#.rgbSwapped()
                 img = QImage( im_gray.data , new_size.width(), new_size.height(), im_gray.strides[0], QImage.Format_Grayscale8)#.rgbSwapped()
 
+                print(new_size, self.lastFrame.shape)
+
                 self.imageChanged.emit(img)
                 QThread.msleep(1)
         print('grabber thread finished')

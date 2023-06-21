@@ -4,11 +4,11 @@
 
 This project is intended to interface ALoka old ultrasound device. Furthermore, this tool allows the user to capture images and automatically segment Rib-eye area using deep learning with Tensorflow/Keras. 
 
-This repository  is now deprecated. The new repository will be updated soon.
+This repository  is now deprecated. The project is now maintained at [ultraisom repository](https://github.com/edu010101/ultraisom)
 
 ## Prerequisite
 
-- This project was designed using Tensorflow with Keras.
+- Tensorflow with Keras.
 - Python 3.8.16.
 
 ## Usage

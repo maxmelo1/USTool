@@ -24,7 +24,7 @@ from utils.utils2 import pixel_area
 
 import GUI.res.resources
 from graphicsview import GraphicsScene
-from animal import *
+from project import *
 from animal_table_model import AnimalTableModel
 from animal_table_view import AnimalTableView
 from about import AboutDialog

@@ -45,3 +45,16 @@ class Cattle():
     
     def __str__(self):
         return f"ID: {self.id}\nAOL: {self.ribeye.size}\nEGS:{self.egs}\nPICANHA: {self.picanha}\n"
+    
+
+
+class Project:
+    '''
+    Wrapper of project info. It holds project name, a list of cattle. Each cattle has characteristics, such as marbling. Each feature encapsulates captured features.
+    '''
+
+    def __init__(self, name, id) -> None:
+        self.name = name
+        self.id = id
+        self.cattle_list = list()
+        
